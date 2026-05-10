@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash7566 - Tech Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        /* LEFT PANEL - PROFILE */
+        .left-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-pic-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            object-fit: cover;
+            border: 5px solid #667eea;
+        }
+        
+        .pic-upload-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        
+        .pic-upload-btn:hover {
+            background: #764ba2;
+        }
+        
+        .profile-info {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        .profile-info h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .profile-info p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .profile-info .title {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .resume-section {
+            width: 100%;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .resume-section h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .resume-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #764ba2;
+        }
+        
+        .btn-secondary {
+            background: #e0e7ff;
+            color: #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #c7d2fd;
+        }
+        
+        .social-links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .social-links a {
+            padding: 12px;
+            background: #f0f0f0;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+        
+        .social-links a:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* RIGHT PANEL - EDIT */
+        .right-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .edit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .edit-header h2 {
+            color: #333;
+            font-size: 22px;
+        }
+        
+        .logout-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .logout-btn:hover {
+            background: #ee5a52;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .form-actions button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .btn-save {
+            background: #51cf66;
+            color: white;
+        }
+        
+        .btn-save:hover {
+            background: #40c057;
+        }
+        
+        .btn-cancel {
+            background: #e0e0e0;
+            color: #333;
+        }
+        
+        .btn-cancel:hover {
+            background: #d0d0d0;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        /* HIDDEN LOGIN */
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .login-box h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .login-box input {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        
+        .login-box input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+        .login-box button:hover {
+            background: #764ba2;
+        }
+        
+        .login-error {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .skill-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .skill-input input {
+            flex: 1;
+        }
+        
+        .skill-input button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .skill-input button:hover {
+            background: #ee5a52;
+        }
+        
+        .add-skill-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .add-skill-btn:hover {
+            background: #764ba2;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .right-panel {
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- LEFT PANEL - PROFILE DISPLAY -->
+    <div class="left-panel">
+        <div class="profile-pic-container">
+            <img id="profilePicDisplay" class="profile-pic" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='100' fill='%23667eea'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='40'%3E👤%3C/text%3E%3C/svg%3E" alt="Profile">
+            <button class="pic-upload-btn" onclick="triggerEditMode()" title="Click to edit">✏️</button>
+        </div>
+        
+        <div class="profile-info">
+            <h1 id="displayName">Akash Kumar</h1>
+            <p class="title" id="displayTitle">Full Stack Developer</p>
+            <p id="displayBio">Passionate about creating web solutions</p>
+            <p id="displayEmail">akash@example.com</p>
+        </div>
+        
+        <div class="resume-section">
+            <h3>📄 Resume</h3>
+            <div class="resume-buttons">
+                <button class="btn btn-primary" id="downloadResumeBtn" onclick="downloadResume()">📥 Download</button>
+                <button class="btn btn-secondary" onclick="triggerEditMode()">📤 Upload</button>
+            </div>
+        </div>
+        
+        <div class="social-links" id="socialLinksDisplay">
+            <a href="https://github.com" target="_blank">🔗 GitHub</a>
+            <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+            <a href="mailto:email@example.com">📧 Email</a>
+        </div>
+    </div>
+
+    <!-- RIGHT PANEL - EDIT FORM (HIDDEN BY DEFAULT) -->
+    <div class="right-panel hidden" id="editPanel">
+        <div class="edit-header">
+            <h2>Edit Profile</h2>
+            <button class="logout-btn" onclick="logout()">🔒 Logout</button>
+        </div>
+        
+        <!-- BASIC INFO SECTION -->
+        <div class="section-title">👤 Basic Information</div>
+        
+        <div class="form-group">
+            <label for="editName">Full Name</label>
+            <input type="text" id="editName" placeholder="Your Full Name">
+        </div>
+        
+        <div class="form-group">
+            <label for="editTitle">Professional Title</label>
+            <input type="text" id="editTitle" placeholder="e.g., Full Stack Developer">
+        </div>
+        
+        <div class="form-group">
+            <label for="editBio">Bio/About</label>
+            <textarea id="editBio" placeholder="Tell about yourself..."></textarea>
+        </div>
+        
+        <!-- CONTACT SECTION -->
+        <div class="section-title">📞 Contact Information</div>
+        
+        <div class="form-group">
+            <label for="editEmail">Email Address</label>
+            <input type="email" id="editEmail" placeholder="your.email@example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="editPhone">Phone Number</label>
+            <input type="tel" id="editPhone" placeholder="+1 (555) 000-0000">
+        </div>
+        
+        <div class="form-group">
+            <label for="editLocation">Location</label>
+            <input type="text" id="editLocation" placeholder="City, Country">
+        </div>
+        
+        <!-- SOCIAL LINKS SECTION -->
+        <div class="section-title">🔗 Social Links</div>
+        
+        <div class="form-group">
+            <label for="editGithub">GitHub URL</label>
+            <input type="url" id="editGithub" placeholder="https://github.com/username">
+        </div>
+        
+        <div class="form-group">
+            <label for="editLinkedin">LinkedIn URL</label>
+            <input type="url" id="editLinkedin" placeholder="https://linkedin.com/in/username">
+        </div>
+        
+        <div class="form-group">
+            <label for="editPortfolio">Portfolio Website</label>
+            <input type="url" id="editPortfolio" placeholder="https://yourportfolio.com">
+        </div>
+        
+        <!-- SKILLS SECTION -->
+        <div class="section-title">💻 Skills</div>
+        
+        <div class="skills-container" id="skillsContainer">
+            <!-- Skills will be added here dynamically -->
+        </div>
+        
+        <button class="add-skill-btn" onclick="addSkillInput()">+ Add Skill</button>
+        
+        <!-- RESUME SECTION -->
+        <div class="section-title">📄 Resume</div>
+        
+        <div class="form-group">
+            <label for="resumeFile">Upload Resume (PDF)</label>
+            <input type="file" id="resumeFile" accept=".pdf,.doc,.docx" onchange="handleResumeUpload(event)">
+            <p style="color: #666; font-size: 12px; margin-top: 8px;">Current: <span id="currentResumeName">No resume uploaded</span></p>
+        </div>
+        
+        <!-- PROFILE PICTURE SECTION -->
+        <div class="section-title">🖼️ Profile Picture</div>
+        
+        <div class="form-group">
+            <label for="profilePicFile">Upload Profile Picture</label>
+            <input type="file" id="profilePicFile" accept="image/*" onchange="handleProfilePicUpload(event)">
+            <p style="color: #666; font-size: 12px; margin-top: 8px;">Recommended: Square image, at least 200x200px</p>
+        </div>
+        
+        <!-- FORM ACTIONS -->
+        <div class="form-actions">
+            <button class="btn-save" onclick="saveProfile()">💾 Save Changes</button>
+            <button class="btn-cancel" onclick="cancelEdit()">❌ Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- LOGIN OVERLAY -->
+<div class="login-overlay" id="loginOverlay">
+    <div class="login-box">
+        <h2>🔐 Edit Portal</h2>
+        <input type="text" id="loginId" placeholder="User ID" onkeypress="handleLoginKeypress(event)">
+        <input type="password" id="loginPassword" placeholder="Password" onkeypress="handleLoginKeypress(event)">
+        <button onclick="login()">Login</button>
+        <div class="login-error" id="loginError"></div>
+    </div>
+</div>
+
+<script>
+    // CREDENTIALS (CHANGE THESE AS NEEDED)
+    const VALID_ID = "Akash7566";
+    const VALID_PASSWORD = "Aman7566";
+    
+    // Default Data Structure
+    let portfolioData = {
+        name: "Akash Kumar",
+        title: "Full Stack Developer",
+        bio: "Passionate about creating web solutions",
+        email: "akash@example.com",
+        phone: "+1 (555) 000-0000",
+        location: "USA",
+        github: "https://github.com",
+        linkedin: "https://linkedin.com",
+        portfolio: "https://yourportfolio.com",
+        skills: ["JavaScript", "React", "Node.js", "MongoDB"],
+        profilePic: null,
+        resumeFile: null,
+        resumeName: "No resume uploaded"
+    };
+    
+    // LOAD DATA FROM LOCAL STORAGE
+    function loadData() {
+        const saved = localStorage.getItem('portfolioData');
+        if (saved) {
+            portfolioData = JSON.parse(saved);
+        }
+        displayProfile();
+    }
+    
+    // SAVE DATA TO LOCAL STORAGE
+    function saveData() {
+        localStorage.setItem('portfolioData', JSON.stringify(portfolioData));
+    }
+    
+    // DISPLAY PROFILE
+    function displayProfile() {
+        document.getElementById('displayName').textContent = portfolioData.name;
+        document.getElementById('displayTitle').textContent = portfolioData.title;
+        document.getElementById('displayBio').textContent = portfolioData.bio;
+        document.getElementById('displayEmail').textContent = portfolioData.email;
+        
+        if (portfolioData.profilePic) {
+            document.getElementById('profilePicDisplay').src = portfolioData.profilePic;
+        }
+        
+        // Update social links
+        const socialLinksHTML = `
+            <a href="${portfolioData.github}" target="_blank">🔗 GitHub</a>
+            <a href="${portfolioData.linkedin}" target="_blank">💼 LinkedIn</a>
+            <a href="mailto:${portfolioData.email}">📧 Email</a>
+            <a href="${portfolioData.portfolio}" target="_blank">🌐 Portfolio</a>
+        `;
+        document.getElementById('socialLinksDisplay').innerHTML = socialLinksHTML;
+    }
+    
+    // LOGIN
+    function login() {
+        const id = document.getElementById('loginId').value;
+        const password = document.getElementById('loginPassword').value;
+        const errorDiv = document.getElementById('loginError');
+        
+        if (id === VALID_ID && password === VALID_PASSWORD) {
+            document.getElementById('loginOverlay').classList.add('hidden');
+            document.getElementById('editPanel').classList.remove('hidden');
+            populateEditForm();
+        } else {
+            errorDiv.textContent = '❌ Invalid ID or Password!';
+            setTimeout(() => errorDiv.textContent = '', 3000);
+        }
+    }
+    
+    // HANDLE LOGIN KEYPRESS
+    function handleLoginKeypress(event) {
+        if (event.key === 'Enter') {
+            login();
+        }
+    }
+    
+    // TRIGGER EDIT MODE
+    function triggerEditMode() {
+        document.getElementById('loginOverlay').classList.remove('hidden');
+        document.getElementById('editPanel').classList.add('hidden');
+        document.getElementById('loginId').value = '';
+        document.getElementById('loginPassword').value = '';
+        document.getElementById('loginError').textContent = '';
+    }
+    
+    // POPULATE EDIT FORM
+    function populateEditForm() {
+        document.getElementById('editName').value = portfolioData.name;
+        document.getElementById('editTitle').value = portfolioData.title;
+        document.getElementById('editBio').value = portfolioData.bio;
+        document.getElementById('editEmail').value = portfolioData.email;
+        document.getElementById('editPhone').value = portfolioData.phone;
+        document.getElementById('editLocation').value = portfolioData.location;
+        document.getElementById('editGithub').value = portfolioData.github;
+        document.getElementById('editLinkedin').value = portfolioData.linkedin;
+        document.getElementById('editPortfolio').value = portfolioData.portfolio;
+        
+        // Display current resume name
+        document.getElementById('currentResumeName').textContent = portfolioData.resumeName;
+        
+        // Populate skills
+        populateSkills();
+    }
+    
+    // POPULATE SKILLS
+    function populateSkills() {
+        const container = document.getElementById('skillsContainer');
+        container.innerHTML = '';
+        
+        portfolioData.skills.forEach((skill, index) => {
+            const skillDiv = document.createElement('div');
+            skillDiv.className = 'skill-input';
+            skillDiv.innerHTML = `
+                <input type="text" value="${skill}" onchange="updateSkill(${index}, this.value)">
+                <button onclick="removeSkill(${index})">×</button>
+            `;
+            container.appendChild(skillDiv);
+        });
+    }
+    
+    // ADD SKILL INPUT
+    function addSkillInput() {
+        portfolioData.skills.push('New Skill');
+        populateSkills();
+    }
+    
+    // UPDATE SKILL
+    function updateSkill(index, value) {
+        portfolioData.skills[index] = value;
+    }
+    
+    // REMOVE SKILL
+    function removeSkill(index) {
+        portfolioData.skills.splice(index, 1);
+        populateSkills();
+    }
+    
+    // HANDLE RESUME UPLOAD
+    function handleResumeUpload(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                portfolioData.resumeFile = e.target.result;
+                portfolioData.resumeName = file.name;
+                document.getElementById('currentResumeName').textContent = file.name;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    
+    // HANDLE PROFILE PICTURE UPLOAD
+    function handleProfilePicUpload(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                portfolioData.profilePic = e.target.result;
+                document.getElementById('profilePicDisplay').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    
+    // DOWNLOAD RESUME
+    function downloadResume() {
+        if (portfolioData.resumeFile) {
+            const link = document.createElement('a');
+            link.href = portfolioData.resumeFile;
+            link.download = portfolioData.resumeName || 'resume.pdf';
+            link.click();
+        } else {
+            alert('No resume uploaded yet!');
+        }
+    }
+    
+    // SAVE PROFILE
+    function saveProfile() {
+        portfolioData.name = document.getElementById('editName').value;
+        portfolioData.title = document.getElementById('editTitle').value;
+        portfolioData.bio = document.getElementById('editBio').value;
+        portfolioData.email = document.getElementById('editEmail').value;
+        portfolioData.phone = document.getElementById('editPhone').value;
+        portfolioData.location = document.getElementById('editLocation').value;
+        portfolioData.github = document.getElementById('editGithub').value;
+        portfolioData.linkedin = document.getElementById('editLinkedin').value;
+        portfolioData.portfolio = document.getElementById('editPortfolio').value;
+        
+        saveData();
+        displayProfile();
+        
+        alert('✅ Profile saved successfully!');
+        cancelEdit();
+    }
+    
+    // CANCEL EDIT
+    function cancelEdit() {
+        document.getElementById('editPanel').classList.add('hidden');
+        document.getElementById('loginOverlay').classList.add('hidden');
+    }
+    
+    // LOGOUT
+    function logout() {
+        cancelEdit();
+    }
+    
+    // INITIALIZE
+    loadData();
+</script>
+
+</body>
+</html>
