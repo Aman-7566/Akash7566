@@ -1,6 +1,3 @@
-
-
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Akash Kourav — BI Analyst & Power BI Developer</title>
@@ -3658,6 +3655,109 @@ body.editing .ak-edit-current-tab{display:block}
 .soc-naukri svg,.social-row-v2 .soc-naukri svg{width:16px;height:16px;display:block}
 .admin-social-note{font-size:.66rem;color:var(--muted);margin-top:.25rem;line-height:1.45}
 @media(max-width:700px){.social-row-v2{grid-template-columns:repeat(5,1fr)!important}}
+
+
+/* =========================================================
+   GITHUB 100% VIEW FIX — prevents card/text clipping on laptop
+   and GitHub Pages default browser zoom.
+   ========================================================= */
+.home-v2,
+.home-shell,
+.main-stack,
+.left-stack,
+.glass-card,
+.hero-banner-v2,
+.tech-strip-v2,
+.feature-grid-v2,
+.feature-card-v2,
+.project-mini{
+  min-width:0 !important;
+}
+
+.home-shell{
+  width:100% !important;
+  max-width:1320px !important;
+  grid-template-columns:minmax(230px,285px) minmax(0,1fr) !important;
+}
+
+.main-stack{width:100% !important;overflow:visible !important;}
+.glass-card{max-width:100% !important;}
+
+/* Core Technologies should wrap instead of squeezing/cutting text */
+.tech-list-v2{
+  display:grid !important;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr)) !important;
+  gap:.65rem !important;
+}
+.tech-pill-v2{min-width:0 !important;overflow:hidden !important;}
+.tech-pill-v2 div{min-width:0 !important;}
+.tech-pill-v2 b,.tech-pill-v2 small{max-width:100% !important;}
+.tech-head-v2{flex-wrap:wrap !important;}
+
+/* Feature cards: no horizontal text clipping */
+.feature-grid-v2{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:clamp(.75rem,1.3vw,1rem) !important;
+  align-items:stretch !important;
+}
+.feature-card-v2{
+  min-height:unset !important;
+  height:auto !important;
+  overflow:hidden !important;
+  padding:clamp(.9rem,1.2vw,1.15rem) !important;
+}
+.project-mini{
+  grid-template-columns:1fr !important;
+  gap:.85rem !important;
+  align-items:start !important;
+}
+.chart-thumb{
+  width:100% !important;
+  max-width:190px !important;
+  height:120px !important;
+  margin:0 auto !important;
+  flex-shrink:0 !important;
+}
+.mini-title,
+.mini-desc,
+.quote-v2,
+.quote-author-v2,
+.section-pill{
+  max-width:100% !important;
+  white-space:normal !important;
+  overflow:visible !important;
+  text-overflow:clip !important;
+  overflow-wrap:break-word !important;
+}
+.mini-btn,.thought-refresh-home{
+  max-width:100% !important;
+  white-space:normal !important;
+  word-break:normal !important;
+}
+.award-medal{max-width:120px;margin-left:auto;margin-right:auto;}
+
+/* Laptop width: keep clean two/one column layout */
+@media(max-width:1280px){
+  .home-shell{grid-template-columns:1fr !important;max-width:1040px !important;}
+  .left-stack{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:1rem !important;}
+  .feature-grid-v2{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}
+}
+
+@media(max-width:1050px){
+  .feature-grid-v2{grid-template-columns:1fr !important;}
+  .project-mini{grid-template-columns:minmax(120px,180px) minmax(0,1fr) !important;}
+  .chart-thumb{max-width:180px !important;margin:0 !important;}
+}
+
+@media(max-width:760px){
+  .home-shell{grid-template-columns:1fr !important;}
+  .left-stack{display:flex !important;flex-direction:column !important;}
+  .tech-list-v2{grid-template-columns:1fr !important;}
+  .feature-grid-v2{grid-template-columns:1fr !important;}
+  .project-mini{grid-template-columns:1fr !important;}
+  .chart-thumb{max-width:100% !important;margin:0 auto !important;}
+}
 </style>
 <script>
 (function(){
