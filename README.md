@@ -1,4 +1,5 @@
 
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -532,6 +533,323 @@ footer{padding:1.1rem 2.5rem;border-top:1px solid rgba(255,255,255,.04);display:
   .hero-name{font-size:1.8rem;}
   .skills-grid{grid-template-columns:1fr;}
 }
+
+/* Home dashboard redesign inspired by the supplied layout, using the existing theme. */
+.home-dashboard{
+  grid-template-columns:320px minmax(0,1fr);
+  grid-template-rows:auto auto;
+  align-items:stretch;
+  gap:1rem 1.4rem;
+  min-height:auto;
+  padding:2rem 5vw 1rem;
+}
+.home-dashboard .hero-bg{
+  background:
+    radial-gradient(circle at 8% 20%,rgba(61,127,255,.12),transparent 24%),
+    radial-gradient(circle at 78% 8%,rgba(232,83,10,.13),transparent 30%),
+    linear-gradient(135deg,rgba(61,127,255,.07),rgba(232,83,10,.06) 48%,transparent);
+}
+.home-dashboard .hero-center{
+  grid-column:1;
+  grid-row:1;
+  align-items:stretch;
+  gap:.8rem;
+}
+.home-dashboard .hero-left{
+  grid-column:1;
+  grid-row:2;
+  position:relative;
+  top:auto;
+}
+.home-dashboard .hero-right{
+  grid-column:2;
+  grid-row:1 / span 2;
+  min-height:430px;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:22px;
+  padding:2rem 2rem 1.1rem;
+  overflow:hidden;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 82% 26%,rgba(61,127,255,.26),transparent 30%),
+    radial-gradient(circle at 56% 86%,rgba(232,83,10,.16),transparent 34%),
+    linear-gradient(135deg,rgba(12,15,26,.96),rgba(16,20,34,.94));
+  box-shadow:0 22px 70px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.1);
+}
+.home-dashboard .hero-right::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(115deg,transparent 0 42%,rgba(255,255,255,.04) 42% 43%,transparent 43%),
+    repeating-linear-gradient(115deg,transparent 0 22px,rgba(255,255,255,.025) 23px 24px);
+  opacity:.55;
+  pointer-events:none;
+}
+.home-dashboard .hero-right::after{
+  content:'';
+  position:absolute;
+  right:5%;
+  top:10%;
+  width:min(42%,390px);
+  aspect-ratio:1.25;
+  border-radius:26px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.04)),
+    linear-gradient(90deg,transparent 12%,rgba(232,83,10,.6) 12% 18%,transparent 18% 24%,rgba(61,127,255,.85) 24% 30%,transparent 30% 36%,rgba(22,199,106,.7) 36% 42%,transparent 42%),
+    radial-gradient(circle at 70% 34%,rgba(255,255,255,.25),transparent 20%);
+  box-shadow:0 30px 50px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.12) inset;
+  transform:perspective(780px) rotateY(-18deg) rotateX(8deg);
+  animation:cardEntrance .7s cubic-bezier(.34,1.56,.64,1) both, blobFloat1 8s ease-in-out 1s infinite;
+  pointer-events:none;
+}
+.home-dashboard .hero-eyebrow,
+.home-dashboard .hero-name,
+.home-dashboard .hero-role,
+.home-dashboard .hero-desc,
+.home-dashboard .tech-section,
+.home-dashboard .hero-ctas{
+  position:relative;
+  z-index:2;
+  max-width:54%;
+}
+.home-dashboard .hero-eyebrow{
+  color:var(--text);
+  font-weight:700;
+}
+.home-dashboard .hero-name{
+  font-size:clamp(2.5rem,4.6vw,4.4rem);
+  color:var(--text);
+}
+.home-dashboard .hero-name::first-line{color:var(--text);}
+.home-dashboard .hero-role{
+  color:#fff;
+  font-size:1.08rem;
+}
+.home-dashboard .hero-desc{
+  color:#cbd2df;
+  font-size:.88rem;
+}
+.home-dashboard .hero-eyebrow{order:1;}
+.home-dashboard .hero-name{order:2;}
+.home-dashboard .hero-role{order:3;}
+.home-dashboard .hero-desc{order:4;}
+.home-dashboard .hero-ctas{order:5;}
+.home-dashboard .hero-stat-strip{
+  order:6;
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:.6rem;
+  width:100%;
+  margin:.45rem 0 .1rem;
+  padding:.8rem;
+  border-radius:16px;
+  background:rgba(255,255,255,.88);
+  box-shadow:0 16px 35px rgba(0,0,0,.18);
+}
+.home-dashboard .hero-stat-mini{
+  display:grid;
+  grid-template-columns:34px auto;
+  grid-template-rows:auto auto;
+  align-items:center;
+  column-gap:.55rem;
+  color:#151925;
+  min-width:0;
+}
+.home-dashboard .hero-stat-mini span{
+  grid-row:1 / span 2;
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(232,83,10,.1);
+}
+.home-dashboard .hero-stat-mini strong{
+  color:var(--orange);
+  font-family:'Syne',sans-serif;
+  font-size:1.05rem;
+  line-height:1;
+}
+.home-dashboard .hero-stat-mini small{
+  color:#50596b;
+  font-size:.62rem;
+  line-height:1.2;
+}
+.home-dashboard .tech-section{order:7;}
+.home-dashboard .profile-glass-card,
+.home-dashboard .info-panel,
+.home-dashboard .thought-card{
+  max-width:none;
+  width:100%;
+  border-radius:16px;
+  background:rgba(12,15,26,.82);
+  box-shadow:0 16px 46px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.08);
+}
+.home-dashboard .profile-glass-card{
+  padding:1.4rem 1.2rem 1.1rem;
+}
+.home-dashboard .profile-img-wrap{
+  width:142px;
+  height:142px;
+}
+.home-dashboard .card-name{
+  font-size:1.45rem;
+}
+.home-dashboard .avail-badge{
+  margin:.9rem 0 0;
+  background:rgba(232,83,10,.08);
+  border-color:rgba(232,83,10,.2);
+  color:var(--text);
+}
+.home-dashboard .thought-card{
+  padding:1rem;
+}
+.home-dashboard .info-panel-title{
+  color:var(--text);
+  font-size:.88rem;
+  text-transform:none;
+  letter-spacing:0;
+}
+.home-dashboard .info-panel-title::before{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--orange);
+}
+.home-dashboard .info-item{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.07);
+  padding:.62rem .7rem;
+}
+.home-dashboard .tech-section{
+  margin-top:1rem;
+  max-width:100%;
+}
+.home-dashboard .tech-section-label{
+  background:rgba(255,255,255,.88);
+  color:#151925;
+  border-radius:16px 16px 0 0;
+  padding:.7rem .9rem;
+  text-transform:none;
+  letter-spacing:0;
+  font-size:.78rem;
+}
+.home-dashboard .tech-grid{
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:.7rem;
+  padding:.85rem;
+  background:rgba(255,255,255,.82);
+  border-radius:0 0 16px 16px;
+}
+.home-dashboard .tech-chip{
+  background:rgba(12,15,26,.07);
+  border-color:rgba(12,15,26,.08);
+  min-width:0;
+}
+.home-dashboard .tech-chip-name{color:#151925;}
+.home-dashboard .tech-chip-level{color:#50596b;}
+.home-dashboard + .stats-sec{
+  margin:0 5vw 1rem;
+  padding:1rem;
+  border-radius:16px;
+  background:rgba(255,255,255,.86);
+  border:1px solid rgba(255,255,255,.34);
+  box-shadow:0 16px 46px rgba(0,0,0,.16);
+}
+.home-dashboard + .stats-sec .stats-title{
+  margin-bottom:1rem;
+}
+.home-dashboard + .stats-sec .stats-title h3{color:#151925;}
+.home-dashboard + .stats-sec .stats-title p{color:#50596b;}
+.home-dashboard + .stats-sec .stats-grid{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+}
+.home-dashboard + .stats-sec .scard{
+  background:rgba(12,15,26,.06);
+  border-color:rgba(12,15,26,.08);
+  color:#151925;
+}
+.home-dashboard + .stats-sec .scard-label{color:#151925;}
+.home-dashboard + .stats-sec .scard-desc{color:#50596b;}
+.home-dashboard + .stats-sec .hero-visual-wrap{
+  margin-top:1rem;
+  background:rgba(12,15,26,.06);
+  border-color:rgba(12,15,26,.08);
+}
+.home-dashboard + .stats-sec .visual-section-title,
+.home-dashboard + .stats-sec .skill-bar-label{color:#151925;}
+
+@media(max-width:1100px){
+  .home-dashboard{
+    grid-template-columns:1fr;
+    padding:1.5rem;
+  }
+  .home-dashboard .hero-center,
+  .home-dashboard .hero-left,
+  .home-dashboard .hero-right{
+    grid-column:1;
+    grid-row:auto;
+  }
+  .home-dashboard .hero-eyebrow,
+  .home-dashboard .hero-name,
+  .home-dashboard .hero-role,
+  .home-dashboard .hero-desc,
+  .home-dashboard .hero-ctas{
+    max-width:100%;
+  }
+  .home-dashboard .hero-right::after{
+    opacity:.18;
+    width:52%;
+  }
+  .home-dashboard .tech-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  .home-dashboard .hero-stat-strip{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .home-dashboard + .stats-sec{
+    margin:0 1.5rem 1rem;
+  }
+  .home-dashboard + .stats-sec .stats-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:700px){
+  .home-dashboard{
+    padding:1rem;
+  }
+  .home-dashboard .hero-right{
+    min-height:auto;
+    padding:1.3rem;
+  }
+  .home-dashboard .hero-right::after{
+    display:none;
+  }
+  .home-dashboard .hero-name{
+    font-size:2.1rem;
+  }
+  .home-dashboard .profile-img-wrap{
+    width:118px;
+    height:118px;
+  }
+  .home-dashboard .tech-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .home-dashboard .hero-stat-strip{
+    grid-template-columns:1fr;
+  }
+  .home-dashboard + .stats-sec{
+    margin:0 1rem 1rem;
+  }
+  .home-dashboard + .stats-sec .stats-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
 </style>
 </head>
 <body>
@@ -602,7 +920,7 @@ footer{padding:1.1rem 2.5rem;border-top:1px solid rgba(255,255,255,.04);display:
 
 <!-- ════ HOME ════ -->
 <div class="page active" id="page-home">
-  <div class="hero">
+  <div class="hero home-dashboard">
     <div class="hero-bg"></div>
 
     <!-- LEFT -->
@@ -708,6 +1026,12 @@ footer{padding:1.1rem 2.5rem;border-top:1px solid rgba(255,255,255,.04);display:
       <div class="hero-ctas">
         <button onclick="showPage('projects',document.querySelectorAll('.nav-tab')[3])" class="btn-primary">Discover My Work →</button>
         <button onclick="scrollToContact()" class="btn-secondary">📩 Hire Me</button>
+      </div>
+      <div class="hero-stat-strip">
+        <div class="hero-stat-mini"><span>&#128202;</span><strong>50+</strong><small>Power BI Dashboards</small></div>
+        <div class="hero-stat-mini"><span>&#128101;</span><strong>25+</strong><small>Happy Clients</small></div>
+        <div class="hero-stat-mini"><span>&#11088;</span><strong>100%</strong><small>Client Satisfaction</small></div>
+        <div class="hero-stat-mini"><span>&#127970;</span><strong>10+</strong><small>Industries Served</small></div>
       </div>
     </div>
   </div>
@@ -1264,3 +1588,4 @@ window.addEventListener('load',()=>{
 </script>
 </body>
 </html>
+
