@@ -1,4 +1,5 @@
 
+<html lang="en">
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Akash Kourav — BI Analyst &amp; Power BI Developer</title>
@@ -3911,5 +3912,47 @@ body.editing .ak-edit-current-tab{display:block}
   .home-v2>.feature-grid-v2 .project-mini{grid-template-columns:1fr!important;}
   .home-v2>.feature-grid-v2 .chart-thumb{max-width:100%!important;margin:0 auto!important;}
 }
-</style></body>
+</style>
+
+<!-- AKASH PATCH: MOBILE HEADER VISIBILITY FIX -->
+<style id="akash-mobile-header-fix">
+/* Keep header always visible on mobile/tablet after GitHub publish */
+nav{
+  display:flex!important;
+  position:fixed!important;
+  top:0!important;left:0!important;right:0!important;
+  z-index:99999!important;
+  height:58px!important;
+  min-height:58px!important;
+  background:rgba(7,9,15,.985)!important;
+  border-bottom:1px solid rgba(255,255,255,.10)!important;
+  box-shadow:0 8px 28px rgba(0,0,0,.35)!important;
+}
+.nav-brand{display:flex!important;align-items:center!important;min-width:0!important;}
+.nav-logo{flex:0 0 auto!important;}
+.nav-name{display:inline-block!important;color:var(--text)!important;}
+.page{padding-top:58px!important;}
+.mobile-drawer{display:block!important;z-index:99998!important;}
+
+@media(max-width:1100px){
+  nav{height:56px!important;min-height:56px!important;padding:0 14px!important;}
+  .nav-tabs,.nav-actions{display:none!important;}
+  .nav-hamburger{display:flex!important;margin-left:auto!important;flex:0 0 auto!important;}
+  .page{padding-top:56px!important;}
+  .mobile-drawer{top:56px!important;}
+}
+
+@media(max-width:700px){
+  nav{height:54px!important;min-height:54px!important;padding:0 12px!important;}
+  .nav-logo{width:30px!important;height:30px!important;border-radius:8px!important;font-size:.68rem!important;}
+  .nav-name{font-size:.78rem!important;max-width:62vw!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;}
+  .nav-hamburger{display:flex!important;}
+  .nav-hamburger span{display:block!important;background:#edf0f7!important;}
+  .page{padding-top:54px!important;}
+  .mobile-drawer{top:54px!important;}
+  .home-v2{padding-top:12px!important;}
+}
+</style>
+
+</body>
 </html>
