@@ -4054,5 +4054,153 @@ nav{
 }
 </style>
 
+
+
+<!-- AKASH FINAL PATCH: Fix desktop latest cards + What I Do overflow -->
+<style id="akash-final-two-issues-fix">
+/* 1) Fix Latest Project / Recognition / Thought cards on desktop and MacBook */
+@media (min-width:1101px){
+  .home-v2>.feature-grid-v2{
+    width:100%!important;
+    max-width:100%!important;
+    display:grid!important;
+    grid-template-columns:minmax(420px,1.25fr) minmax(300px,.9fr) minmax(340px,1fr)!important;
+    gap:clamp(16px,1.35vw,24px)!important;
+    align-items:stretch!important;
+  }
+  .home-v2>.feature-grid-v2 .feature-card-v2{
+    min-width:0!important;
+    overflow:hidden!important;
+    padding:clamp(18px,1.25vw,24px)!important;
+    min-height:230px!important;
+    justify-content:center!important;
+  }
+  .home-v2>.feature-grid-v2 .project-mini{
+    display:grid!important;
+    grid-template-columns:minmax(135px,190px) minmax(220px,1fr)!important;
+    align-items:center!important;
+    column-gap:clamp(18px,1.5vw,28px)!important;
+  }
+  .home-v2>.feature-grid-v2 .project-mini .chart-thumb{
+    width:100%!important;
+    max-width:190px!important;
+    height:132px!important;
+    margin:0!important;
+  }
+  .home-v2>.feature-grid-v2 .project-mini>div:last-child{
+    min-width:220px!important;
+    width:100%!important;
+  }
+  .home-v2>.feature-grid-v2 .section-pill,
+  .home-v2>.feature-grid-v2 .mini-title,
+  .home-v2>.feature-grid-v2 .mini-desc,
+  .home-v2>.feature-grid-v2 .quote-v2,
+  .home-v2>.feature-grid-v2 .quote-author-v2{
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+    max-width:100%!important;
+  }
+  .home-v2>.feature-grid-v2 .section-pill{
+    font-size:clamp(1rem,1.25vw,1.35rem)!important;
+    line-height:1.25!important;
+  }
+  .home-v2>.feature-grid-v2 .mini-title{
+    font-size:clamp(.98rem,1.05vw,1.15rem)!important;
+    line-height:1.35!important;
+  }
+  .home-v2>.feature-grid-v2 .mini-desc{
+    font-size:.82rem!important;
+    line-height:1.58!important;
+    display:block!important;
+    -webkit-line-clamp:unset!important;
+  }
+  .home-v2>.feature-grid-v2 .mini-btn{
+    width:auto!important;
+    max-width:180px!important;
+    white-space:nowrap!important;
+    padding:.55rem .9rem!important;
+  }
+}
+
+/* MacBook/laptop: keep the three cards in one row but don't squeeze text */
+@media (min-width:1101px) and (max-width:1366px){
+  .home-v2>.feature-grid-v2{
+    grid-template-columns:minmax(390px,1.2fr) minmax(280px,.9fr) minmax(300px,1fr)!important;
+    gap:12px!important;
+  }
+  .home-v2>.feature-grid-v2 .feature-card-v2{padding:16px!important;min-height:225px!important;}
+  .home-v2>.feature-grid-v2 .project-mini{
+    grid-template-columns:150px minmax(210px,1fr)!important;
+    column-gap:16px!important;
+  }
+  .home-v2>.feature-grid-v2 .project-mini .chart-thumb{max-width:150px!important;height:120px!important;}
+  .home-v2>.feature-grid-v2 .project-mini>div:last-child{min-width:210px!important;}
+  .home-v2>.feature-grid-v2 .section-pill{font-size:1.05rem!important;}
+}
+
+/* If screen is too narrow for 3 clean cards, use 1 full-width card per row */
+@media (min-width:901px) and (max-width:1120px){
+  .home-v2>.feature-grid-v2{grid-template-columns:1fr!important;}
+  .home-v2>.feature-grid-v2 .project-mini{grid-template-columns:180px minmax(0,1fr)!important;}
+}
+
+/* 2) Fix What I Do strip: no overflow/cut on desktop, MacBook and laptop */
+@media (min-width:1101px){
+  .what-grid-v2{
+    display:grid!important;
+    grid-template-columns:repeat(5,minmax(0,1fr))!important;
+    gap:0!important;
+    padding:1rem!important;
+    overflow:hidden!important;
+  }
+  .what-card-v2{
+    min-width:0!important;
+    width:100%!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:.65rem!important;
+    padding:.85rem .75rem!important;
+    overflow:hidden!important;
+  }
+  .what-icon-v2{
+    width:42px!important;
+    min-width:42px!important;
+    height:42px!important;
+    flex:0 0 42px!important;
+  }
+  .what-card-v2>div:last-child{
+    min-width:0!important;
+    flex:1 1 auto!important;
+  }
+  .what-card-v2 b,
+  .what-card-v2 span{
+    white-space:normal!important;
+    overflow:visible!important;
+    text-overflow:clip!important;
+    word-break:normal!important;
+    overflow-wrap:break-word!important;
+    max-width:100%!important;
+  }
+  .what-card-v2 b{font-size:.76rem!important;line-height:1.32!important;}
+  .what-card-v2 span{font-size:.64rem!important;line-height:1.38!important;}
+}
+
+@media (min-width:1101px) and (max-width:1366px){
+  .what-grid-v2{grid-template-columns:repeat(5,minmax(0,1fr))!important;padding:.85rem!important;}
+  .what-card-v2{gap:.5rem!important;padding:.7rem .55rem!important;}
+  .what-icon-v2{width:38px!important;min-width:38px!important;height:38px!important;flex-basis:38px!important;font-size:1rem!important;}
+  .what-card-v2 b{font-size:.72rem!important;line-height:1.28!important;}
+  .what-card-v2 span{font-size:.61rem!important;line-height:1.34!important;}
+}
+
+@media (min-width:901px) and (max-width:1100px){
+  .what-grid-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .what-card-v2{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.06)!important;}
+}
+</style>
+
 </body>
 </html>
