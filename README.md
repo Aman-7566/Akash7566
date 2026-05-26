@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 
 <html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Akash Kourav — BI Analyst &amp; Power BI Developer</title>
@@ -4202,5 +4204,70 @@ nav{
 }
 </style>
 
+<!-- AKASH PATCH: prevent desktop/laptop content hiding/cutting -->
+<style id="akash-desktop-visible-no-cut-fix">
+/* Global: never allow cards to push page outside the viewport */
+html,body{max-width:100%!important;overflow-x:hidden!important;}
+#page-home,.home-v2,.home-shell,.left-stack,.main-stack,.glass-card,.hero-banner-v2,.what-grid-v2,.feature-grid-v2,.feature-card-v2,.project-mini{min-width:0!important;max-width:100%!important;}
+.home-v2{width:100%!important;max-width:100%!important;overflow-x:hidden!important;}
+.home-shell{width:100%!important;margin:0 auto!important;}
+.main-stack{overflow:hidden!important;}
+.hero-title-v2,.hero-desc-v2,.hero-subtitle-v2,.what-card-v2 b,.what-card-v2 span,.mini-title,.mini-desc,.section-pill,.quote-v2{overflow-wrap:break-word!important;word-break:normal!important;white-space:normal!important;}
+
+/* Normal desktop / MacBook: compact, full visible layout */
+@media (min-width:1101px) and (max-width:1366px){
+  .home-v2{padding:10px!important;}
+  .home-shell{grid-template-columns:minmax(250px,285px) minmax(0,1fr)!important;gap:12px!important;}
+  .profile-card-v2,.quick-card-v2,.tech-strip-v2{padding:1rem!important;}
+  .main-stack{gap:12px!important;}
+  .hero-banner-v2{grid-template-columns:minmax(0,1fr)!important;min-height:auto!important;padding:1.2rem!important;}
+  .hero-art-v2{display:none!important;}
+  .hero-title-v2{font-size:clamp(2rem,4.6vw,3.25rem)!important;line-height:1.05!important;}
+  .hero-desc-v2{max-width:100%!important;font-size:.82rem!important;line-height:1.55!important;}
+  .kpi-strip-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .what-grid-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:.85rem!important;gap:.65rem!important;}
+  .what-card-v2{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.06)!important;padding:.7rem!important;}
+  .what-card-v2:nth-last-child(-n+2){border-bottom:0!important;}
+  .what-icon-v2{width:38px!important;min-width:38px!important;height:38px!important;flex:0 0 38px!important;}
+  .what-card-v2 b{font-size:.72rem!important;line-height:1.25!important;}
+  .what-card-v2 span{font-size:.61rem!important;line-height:1.35!important;}
+  .home-v2>.feature-grid-v2{grid-template-columns:1fr!important;width:100%!important;margin-top:12px!important;gap:12px!important;}
+  .home-v2>.feature-grid-v2 .feature-card-v2{min-height:auto!important;padding:1rem!important;}
+  .home-v2>.feature-grid-v2 .project-mini{grid-template-columns:150px minmax(0,1fr)!important;gap:1rem!important;}
+  .home-v2>.feature-grid-v2 .project-mini>div:last-child{min-width:0!important;}
+  .home-v2>.feature-grid-v2 .chart-thumb{max-width:150px!important;height:110px!important;}
+}
+
+/* Smaller desktop / 100% browser view: stack cleanly, so nothing hides */
+@media (min-width:761px) and (max-width:1100px){
+  .home-v2{padding:10px!important;}
+  .home-shell{grid-template-columns:1fr!important;max-width:100%!important;gap:12px!important;}
+  .left-stack{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;}
+  .left-stack .tech-strip-v2{grid-column:1/-1!important;}
+  .left-stack .tech-list-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .main-stack{width:100%!important;overflow:hidden!important;}
+  .hero-banner-v2{grid-template-columns:1fr!important;min-height:auto!important;padding:1.1rem!important;}
+  .hero-art-v2{display:none!important;}
+  .hero-title-v2{font-size:clamp(2rem,7vw,3.2rem)!important;line-height:1.05!important;}
+  .kpi-strip-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  .what-grid-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.65rem!important;padding:.85rem!important;}
+  .what-card-v2{border-right:0!important;padding:.72rem!important;}
+  .home-v2>.feature-grid-v2{grid-template-columns:1fr!important;width:100%!important;gap:12px!important;}
+  .home-v2>.feature-grid-v2 .project-mini{grid-template-columns:145px minmax(0,1fr)!important;gap:.9rem!important;}
+  .home-v2>.feature-grid-v2 .project-mini>div:last-child{min-width:0!important;}
+  .home-v2>.feature-grid-v2 .chart-thumb{max-width:145px!important;height:105px!important;}
+}
+
+/* Keep mobile exactly clean */
+@media (max-width:760px){
+  .home-v2{padding:10px!important;overflow-x:hidden!important;}
+  .home-shell{grid-template-columns:1fr!important;}
+  .left-stack{display:flex!important;flex-direction:column!important;}
+  .what-grid-v2,.kpi-strip-v2,.left-stack .tech-list-v2,.home-v2>.feature-grid-v2{grid-template-columns:1fr!important;}
+  .hero-art-v2{display:none!important;}
+}
+</style>
+
 </body>
 </html>
+
