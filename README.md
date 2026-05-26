@@ -1,7 +1,4 @@
-<!DOCTYPE html>
 
-<html lang="en">
-<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Akash Kourav — BI Analyst &amp; Power BI Developer</title>
@@ -3958,316 +3955,128 @@ nav{
 
 
 
-<!-- AKASH PATCH: DESKTOP / MACBOOK FULLSCREEN DASHBOARD FIX -->
-<style id="akash-desktop-fullscreen-dashboard-fix">
-/* Desktop and laptop: show full header and use the complete screen width */
-@media (min-width:1101px){
-  html,body{width:100%!important;max-width:100%!important;overflow-x:hidden!important;}
-  nav{
-    display:flex!important;
-    height:58px!important;min-height:58px!important;
-    padding:0 clamp(18px,1.6vw,32px)!important;
-  }
-  .nav-tabs{display:flex!important;visibility:visible!important;opacity:1!important;}
-  .nav-actions{display:flex!important;visibility:visible!important;opacity:1!important;}
-  .nav-hamburger{display:none!important;}
-  .mobile-drawer{display:none!important;}
-  .page{padding-top:58px!important;width:100%!important;max-width:100%!important;}
-
-  /* Home opens edge-to-edge on desktop / MacBook */
-  #page-home{min-height:100dvh!important;}
-  .home-v2{
-    width:100vw!important;max-width:100vw!important;
-    min-height:calc(100dvh - 58px)!important;
-    padding:clamp(12px,1.2vw,22px)!important;
-    overflow-x:hidden!important;
-  }
-  .home-shell{
-    width:100%!important;max-width:none!important;margin:0!important;
-    display:grid!important;
-    grid-template-columns:minmax(285px,330px) minmax(0,1fr)!important;
-    gap:clamp(14px,1.3vw,24px)!important;
-    align-items:start!important;
-  }
-  .left-stack{display:flex!important;flex-direction:column!important;gap:clamp(12px,1vw,18px)!important;}
-  .main-stack{width:100%!important;min-width:0!important;gap:clamp(12px,1vw,18px)!important;}
-  .hero-banner-v2{
-    width:100%!important;
-    min-height:clamp(300px,36vh,420px)!important;
-    grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr)!important;
-  }
-  .hero-art-v2{min-height:clamp(230px,31vh,340px)!important;}
-  .dashboard-3d{width:min(500px,100%)!important;height:clamp(230px,30vh,330px)!important;}
-  .kpi-strip-v2{grid-template-columns:repeat(4,minmax(0,1fr))!important;}
-
-  /* Core technologies stays vertical under Quick Connect on desktop */
-  .left-stack .tech-strip-v2{display:block!important;order:3!important;width:100%!important;}
-  .left-stack .tech-list-v2{display:grid!important;grid-template-columns:1fr!important;gap:.65rem!important;}
-  .main-stack>.tech-strip-v2{display:none!important;}
-
-  /* Latest Project + Recognition + Thought use full screen width */
-  .home-v2>.feature-grid-v2{
-    width:100%!important;max-width:none!important;margin:clamp(12px,1vw,18px) 0 0!important;
-    display:grid!important;
-    grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) minmax(0,1fr)!important;
-    gap:clamp(14px,1.2vw,22px)!important;
-    align-items:stretch!important;
-  }
-  .home-v2>.feature-grid-v2 .feature-card-v2{min-height:clamp(220px,25vh,310px)!important;}
-
-  /* Growth/dashboard page opens wide and clean on desktop/laptop */
-  #page-growth.sec,.growth-enhanced-section{
-    width:100vw!important;max-width:100vw!important;
-    min-height:calc(100dvh - 58px)!important;
-    padding:clamp(18px,1.6vw,34px)!important;
-    overflow-x:hidden!important;
-  }
-  #page-growth .growth-hero-panel,
-  #page-growth .growth-overview-strip,
-  #page-growth .growth-kpi-premium,
-  #page-growth .growth-visual-grid,
-  #page-growth .growth-visual-grid-enhanced,
-  #page-growth .growth-insight-grid,
-  #page-growth .growth-milestone-grid{
-    width:100%!important;max-width:none!important;
-  }
-  #page-growth .growth-kpi-premium{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:clamp(12px,1vw,18px)!important;}
-  #page-growth .growth-visual-grid-enhanced{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)!important;gap:clamp(14px,1.2vw,22px)!important;}
-  #page-growth .growth-insight-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;}
-  #page-growth .growth-visual-card.tall{min-height:clamp(360px,42vh,520px)!important;}
-  #page-growth .growth-visual-card{min-height:clamp(300px,34vh,420px)!important;}
-  #page-growth .growth-chart-box{height:clamp(270px,32vh,390px)!important;}
-  #page-growth .growth-chart-box.small{height:clamp(230px,28vh,320px)!important;}
+<!-- AKASH FINAL PATCH: Clean Home Experience Journey + Line Slicer (no left gap, latest first) -->
+<style id="ak-clean-home-experience-style">
+/* HOME ONLY: clean, full-width experience journey under skill proficiency */
+#page-home .ak-home-exp-wrap{
+  width:100%!important;
+  max-width:100%!important;
+  margin:.95rem 0 0!important;
+  padding:clamp(.9rem,1.15vw,1.25rem)!important;
+  border-radius:22px!important;
+  border:1px solid rgba(255,255,255,.10)!important;
+  background:
+    radial-gradient(circle at 0% 0%,rgba(232,83,10,.16),transparent 28%),
+    radial-gradient(circle at 100% 8%,rgba(61,127,255,.10),transparent 32%),
+    linear-gradient(145deg,rgba(16,20,32,.98),rgba(7,10,18,.98))!important;
+  box-shadow:0 24px 70px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.06)!important;
+  overflow:hidden!important;
+  position:relative!important;
 }
-
-/* MacBook/smaller laptop: keep desktop header but compress cards so nothing cuts */
-@media (min-width:1101px) and (max-width:1366px){
-  .home-v2{padding:12px!important;}
-  .home-shell{grid-template-columns:295px minmax(0,1fr)!important;gap:14px!important;}
-  .hero-banner-v2{min-height:300px!important;padding:1.15rem 1.25rem!important;}
-  .hero-title-v2{font-size:clamp(2.35rem,4.2vw,3.6rem)!important;}
-  .hero-desc-v2{font-size:.82rem!important;line-height:1.58!important;}
-  .dashboard-3d{transform:scale(.9);transform-origin:center right;}
-  .home-v2>.feature-grid-v2{grid-template-columns:1.15fr .9fr 1fr!important;gap:14px!important;}
-  .home-v2>.feature-grid-v2 .feature-card-v2{min-height:215px!important;padding:1rem!important;}
-  .nav-tab{padding:.3rem .62rem!important;font-size:.68rem!important;}
-  .soc-n{width:28px!important;height:28px!important;}
-  .btn-resume{padding:.3rem .72rem!important;}
+#page-home .ak-home-exp-wrap::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.30;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:34px 34px;
+  -webkit-mask-image:radial-gradient(circle at 45% 45%,black,transparent 82%);
+          mask-image:radial-gradient(circle at 45% 45%,black,transparent 82%);
 }
+#page-home .ak-home-exp-head{
+  position:relative;z-index:2;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:1rem!important;margin:0 0 1rem!important;
+}
+#page-home .ak-home-exp-title{
+  display:flex!important;align-items:center!important;gap:.65rem!important;
+  font-family:'Syne',sans-serif!important;font-size:clamp(1rem,1.35vw,1.45rem)!important;font-weight:900!important;
+  color:#f5f7fb!important;text-transform:uppercase!important;letter-spacing:.18em!important;line-height:1.1!important;
+}
+#page-home .ak-home-exp-title::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 20px rgba(232,83,10,.9),0 0 0 6px rgba(232,83,10,.10)}
+#page-home .ak-home-exp-sub{color:#9aa4b7!important;font-size:.72rem!important;font-weight:700!important;letter-spacing:.04em!important;}
+#page-home .ak-home-exp-controls{display:flex!important;gap:.45rem!important;align-items:center!important;}
+#page-home .ak-home-exp-btn{
+  width:34px;height:34px;border-radius:11px;border:1px solid rgba(232,83,10,.55);background:rgba(232,83,10,.08);color:var(--orange);
+  display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;cursor:pointer;transition:.2s;
+}
+#page-home .ak-home-exp-btn:hover{background:rgba(232,83,10,.18);transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,83,10,.18)}
+#page-home .ak-home-exp-grid{
+  position:relative;z-index:2;display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:clamp(.75rem,1vw,1rem)!important;margin:0!important;padding:0!important;
+}
+#page-home .ak-home-exp-card{
+  min-width:0!important;min-height:300px!important;border-radius:18px!important;padding:1.35rem 1.25rem!important;
+  border:1px solid rgba(255,255,255,.11)!important;background:linear-gradient(155deg,rgba(19,24,38,.96),rgba(8,12,22,.98))!important;
+  box-shadow:0 18px 42px rgba(0,0,0,.34)!important;position:relative!important;overflow:hidden!important;transition:.25s ease!important;
+}
+#page-home .ak-home-exp-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 0%,rgba(232,83,10,.10),transparent 34%);opacity:0;transition:.25s;pointer-events:none}
+#page-home .ak-home-exp-card:hover{transform:translateY(-6px)!important;border-color:rgba(232,83,10,.45)!important;box-shadow:0 28px 60px rgba(232,83,10,.10),0 18px 42px rgba(0,0,0,.38)!important;}
+#page-home .ak-home-exp-card:hover::before,#page-home .ak-home-exp-card.is-current::before{opacity:1}
+#page-home .ak-home-exp-card.is-current{border-color:rgba(232,83,10,.92)!important;background:radial-gradient(circle at 85% 0%,rgba(232,83,10,.16),transparent 38%),linear-gradient(155deg,rgba(30,22,28,.98),rgba(10,13,23,.98))!important;box-shadow:0 28px 70px rgba(232,83,10,.16),0 18px 42px rgba(0,0,0,.42)!important;}
+#page-home .ak-home-exp-card.is-current::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,var(--orange),var(--orange2),transparent);box-shadow:0 0 30px rgba(232,83,10,.6)}
+#page-home .ak-exp-top{display:flex!important;align-items:flex-start!important;justify-content:space-between!important;gap:.8rem!important;margin-bottom:1.05rem!important;}
+#page-home .ak-exp-icon{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1.18rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+#page-home .ak-exp-period{padding:.32rem .72rem;border-radius:999px;background:rgba(232,83,10,.12);border:1px solid rgba(232,83,10,.42);color:var(--orange);font-size:.62rem;font-weight:900;white-space:nowrap;letter-spacing:.02em;}
+#page-home .ak-exp-role{font-family:'Syne',sans-serif!important;font-size:clamp(.98rem,1vw,1.12rem)!important;font-weight:850!important;color:#fff!important;line-height:1.35!important;margin:0 0 .35rem!important;}
+#page-home .ak-exp-company{color:var(--orange)!important;font-weight:850!important;font-size:.75rem!important;margin-bottom:.78rem!important;}
+#page-home .ak-exp-chip{display:inline-flex!important;align-items:center!important;padding:.24rem .68rem!important;border-radius:999px!important;background:rgba(14,165,233,.14)!important;border:1px solid rgba(14,165,233,.22)!important;color:#38bdf8!important;font-size:.64rem!important;font-weight:850!important;margin-bottom:.9rem!important;}
+#page-home .ak-exp-desc{color:#cdd5e3!important;font-size:.76rem!important;line-height:1.65!important;margin:0 0 .95rem!important;}
+#page-home .ak-exp-high{color:var(--orange)!important;font-size:.7rem!important;font-weight:900!important;margin-bottom:.5rem!important;}
+#page-home .ak-exp-list{list-style:none!important;margin:0!important;padding:0!important;display:flex!important;flex-direction:column!important;gap:.38rem!important;}
+#page-home .ak-exp-list li{display:flex!important;align-items:flex-start!important;gap:.42rem!important;color:#dce3ed!important;font-size:.70rem!important;line-height:1.45!important;}
+#page-home .ak-exp-list li::before{content:"✓";width:15px;height:15px;border-radius:50%;background:rgba(34,197,94,.16);color:#4ade80;display:inline-flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:900;flex:0 0 auto;margin-top:.05rem;}
+#page-home .ak-home-exp-linebox{position:relative;z-index:2;margin:1.05rem 0 0!important;padding:1.05rem 0 1.35rem!important;}
+#page-home .ak-home-exp-line{height:2px;background:linear-gradient(90deg,rgba(232,83,10,.18),rgba(232,83,10,.95),rgba(232,83,10,.18));box-shadow:0 0 22px rgba(232,83,10,.34);position:absolute;left:0;right:0;top:1.05rem;border-radius:999px;}
+#page-home .ak-home-exp-markers{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;position:relative;z-index:3;}
+#page-home .ak-home-exp-marker{text-align:center!important;position:relative!important;color:#f7f9fd!important;font-weight:900!important;font-size:.72rem!important;padding-top:1.05rem!important;}
+#page-home .ak-home-exp-marker::before{content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--orange);box-shadow:0 0 0 5px rgba(232,83,10,.14),0 0 24px rgba(232,83,10,.8);}
+#page-home .ak-home-exp-marker span{display:inline-block;padding:.32rem .74rem;border-radius:10px;background:rgba(7,9,15,.94);border:1px solid rgba(232,83,10,.68);box-shadow:0 8px 18px rgba(0,0,0,.35);white-space:nowrap;}
+#page-home .ak-home-exp-range{position:relative;z-index:4;width:100%!important;accent-color:#e8530a;margin:.65rem 0 0!important;height:4px!important;cursor:pointer!important;}
+#page-home .ak-home-exp-dots{display:flex!important;justify-content:center!important;gap:.4rem!important;margin-top:.58rem!important;}
+#page-home .ak-home-exp-dots button{width:28px;height:5px;border:0;border-radius:999px;background:rgba(255,255,255,.18);cursor:pointer;transition:.2s;}
+#page-home .ak-home-exp-dots button.active{width:40px;background:linear-gradient(90deg,var(--orange),var(--orange2));box-shadow:0 0 16px rgba(232,83,10,.55);}
+@media(max-width:1280px){#page-home .ak-home-exp-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}#page-home .ak-home-exp-card{min-height:270px!important;}#page-home .ak-home-exp-markers{min-width:760px!important;}#page-home .ak-home-exp-linebox{overflow-x:auto!important;padding-bottom:1.55rem!important;}}
+@media(max-width:700px){#page-home .ak-home-exp-head{align-items:flex-start!important;flex-direction:column!important;}#page-home .ak-home-exp-grid{grid-template-columns:1fr!important;}#page-home .ak-home-exp-card{min-height:auto!important;padding:1.1rem!important;}#page-home .ak-home-exp-linebox{overflow-x:auto!important;}#page-home .ak-home-exp-markers{min-width:680px!important;}#page-home .ak-home-exp-title{letter-spacing:.10em!important;font-size:.95rem!important;}}
 </style>
-
-
-
-<!-- AKASH FINAL PATCH: Fix desktop latest cards + What I Do overflow -->
-<style id="akash-final-two-issues-fix">
-/* 1) Fix Latest Project / Recognition / Thought cards on desktop and MacBook */
-@media (min-width:1101px){
-  .home-v2>.feature-grid-v2{
-    width:100%!important;
-    max-width:100%!important;
-    display:grid!important;
-    grid-template-columns:minmax(420px,1.25fr) minmax(300px,.9fr) minmax(340px,1fr)!important;
-    gap:clamp(16px,1.35vw,24px)!important;
-    align-items:stretch!important;
+<script id="ak-clean-home-experience-script">
+(function(){
+  const experiences=[
+    {period:'2024 – Present',year:'2024 – Present',icon:'🏢',role:'Power BI Developer & BI Analyst',company:'Current / Freelance',chip:'Analytics & Reporting',desc:'Helping businesses convert raw data into interactive dashboards, automated reports and decision-ready insights.',points:['Delivered 20+ Power BI solutions','Improved reporting efficiency','Supported data-driven decisions']},
+    {period:'2023',year:'2023',icon:'📊',role:'BI Analyst',company:'Data Insights Corp.',chip:'Cloud & Platforms',desc:'Delivered KPI dashboards, automated reporting workflows and actionable analytics for faster business decisions.',points:['Created KPI dashboards','Automated data pipelines','Improved decision-making speed']},
+    {period:'2022',year:'2022',icon:'🧩',role:'Senior BI Developer',company:'XYZ Solutions',chip:'Data Modeling',desc:'Led BI implementations, optimized data models and improved report performance for stakeholder reporting.',points:['Led end-to-end BI projects','Optimized data models','Enhanced report performance']},
+    {period:'2021',year:'2021',icon:'💼',role:'BI Developer',company:'ABC Pvt. Ltd.',chip:'Data Engineering',desc:'Built clean Power BI reports with SQL, DAX and automated data models for reliable reporting.',points:['Developed interactive dashboards','Automated reporting processes','Improved data accuracy']}
+  ];
+  const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const card=(e,i)=>`<article class="ak-home-exp-card ${i===0?'is-current':''}" data-exp-index="${i}"><div class="ak-exp-top"><div class="ak-exp-icon">${esc(e.icon)}</div><div class="ak-exp-period">${esc(e.period)}</div></div><h3 class="ak-exp-role">${esc(e.role)}</h3><div class="ak-exp-company">${esc(e.company)}</div><div class="ak-exp-chip">${esc(e.chip)}</div><p class="ak-exp-desc">${esc(e.desc)}</p><div class="ak-exp-high">Key Highlights</div><ul class="ak-exp-list">${e.points.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></article>`;
+  function build(){
+    const old=document.getElementById('akHomeExperienceJourney');
+    if(old) old.remove();
+    const skill=document.querySelector('#page-home .home-skill-board');
+    if(!skill) return;
+    const section=document.createElement('section');
+    section.id='akHomeExperienceJourney';
+    section.className='ak-home-exp-wrap';
+    section.innerHTML=`<div class="ak-home-exp-head"><div><div class="ak-home-exp-title">Experience Journey</div><div class="ak-home-exp-sub">Latest experience first • clean card timeline</div></div><div class="ak-home-exp-controls"><button class="ak-home-exp-btn" type="button" data-dir="prev">‹</button><button class="ak-home-exp-btn" type="button" data-dir="next">›</button></div></div><div class="ak-home-exp-grid">${experiences.map(card).join('')}</div><div class="ak-home-exp-linebox"><div class="ak-home-exp-line"></div><div class="ak-home-exp-markers">${experiences.map(e=>`<div class="ak-home-exp-marker"><span>${esc(e.year)}</span></div>`).join('')}</div><input class="ak-home-exp-range" type="range" min="0" max="${experiences.length-1}" value="0" aria-label="Experience line slicer"><div class="ak-home-exp-dots">${experiences.map((_,i)=>`<button type="button" data-i="${i}" class="${i===0?'active':''}" aria-label="Select experience ${i+1}"></button>`).join('')}</div></div>`;
+    skill.insertAdjacentElement('afterend',section);
+    const cards=[...section.querySelectorAll('.ak-home-exp-card')];
+    const markers=[...section.querySelectorAll('.ak-home-exp-marker')];
+    const dots=[...section.querySelectorAll('.ak-home-exp-dots button')];
+    const range=section.querySelector('.ak-home-exp-range');
+    let idx=0;
+    function go(i,scroll){
+      idx=Math.max(0,Math.min(Number(i)||0,experiences.length-1));
+      cards.forEach((c,n)=>c.classList.toggle('is-current',n===idx));
+      markers.forEach((m,n)=>m.classList.toggle('is-current',n===idx));
+      dots.forEach((d,n)=>d.classList.toggle('active',n===idx));
+      range.value=idx;
+      if(scroll && window.innerWidth<=1280) cards[idx]?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+    }
+    section.querySelector('[data-dir="prev"]').addEventListener('click',()=>go(idx-1,true));
+    section.querySelector('[data-dir="next"]').addEventListener('click',()=>go(idx+1,true));
+    range.addEventListener('input',()=>go(range.value,true));
+    dots.forEach(d=>d.addEventListener('click',()=>go(d.dataset.i,true)));
+    cards.forEach(c=>c.addEventListener('click',()=>go(c.dataset.expIndex,false)));
+    go(0,false);
   }
-  .home-v2>.feature-grid-v2 .feature-card-v2{
-    min-width:0!important;
-    overflow:hidden!important;
-    padding:clamp(18px,1.25vw,24px)!important;
-    min-height:230px!important;
-    justify-content:center!important;
-  }
-  .home-v2>.feature-grid-v2 .project-mini{
-    display:grid!important;
-    grid-template-columns:minmax(135px,190px) minmax(220px,1fr)!important;
-    align-items:center!important;
-    column-gap:clamp(18px,1.5vw,28px)!important;
-  }
-  .home-v2>.feature-grid-v2 .project-mini .chart-thumb{
-    width:100%!important;
-    max-width:190px!important;
-    height:132px!important;
-    margin:0!important;
-  }
-  .home-v2>.feature-grid-v2 .project-mini>div:last-child{
-    min-width:220px!important;
-    width:100%!important;
-  }
-  .home-v2>.feature-grid-v2 .section-pill,
-  .home-v2>.feature-grid-v2 .mini-title,
-  .home-v2>.feature-grid-v2 .mini-desc,
-  .home-v2>.feature-grid-v2 .quote-v2,
-  .home-v2>.feature-grid-v2 .quote-author-v2{
-    white-space:normal!important;
-    overflow:visible!important;
-    text-overflow:clip!important;
-    word-break:normal!important;
-    overflow-wrap:normal!important;
-    max-width:100%!important;
-  }
-  .home-v2>.feature-grid-v2 .section-pill{
-    font-size:clamp(1rem,1.25vw,1.35rem)!important;
-    line-height:1.25!important;
-  }
-  .home-v2>.feature-grid-v2 .mini-title{
-    font-size:clamp(.98rem,1.05vw,1.15rem)!important;
-    line-height:1.35!important;
-  }
-  .home-v2>.feature-grid-v2 .mini-desc{
-    font-size:.82rem!important;
-    line-height:1.58!important;
-    display:block!important;
-    -webkit-line-clamp:unset!important;
-  }
-  .home-v2>.feature-grid-v2 .mini-btn{
-    width:auto!important;
-    max-width:180px!important;
-    white-space:nowrap!important;
-    padding:.55rem .9rem!important;
-  }
-}
-
-/* MacBook/laptop: keep the three cards in one row but don't squeeze text */
-@media (min-width:1101px) and (max-width:1366px){
-  .home-v2>.feature-grid-v2{
-    grid-template-columns:minmax(390px,1.2fr) minmax(280px,.9fr) minmax(300px,1fr)!important;
-    gap:12px!important;
-  }
-  .home-v2>.feature-grid-v2 .feature-card-v2{padding:16px!important;min-height:225px!important;}
-  .home-v2>.feature-grid-v2 .project-mini{
-    grid-template-columns:150px minmax(210px,1fr)!important;
-    column-gap:16px!important;
-  }
-  .home-v2>.feature-grid-v2 .project-mini .chart-thumb{max-width:150px!important;height:120px!important;}
-  .home-v2>.feature-grid-v2 .project-mini>div:last-child{min-width:210px!important;}
-  .home-v2>.feature-grid-v2 .section-pill{font-size:1.05rem!important;}
-}
-
-/* If screen is too narrow for 3 clean cards, use 1 full-width card per row */
-@media (min-width:901px) and (max-width:1120px){
-  .home-v2>.feature-grid-v2{grid-template-columns:1fr!important;}
-  .home-v2>.feature-grid-v2 .project-mini{grid-template-columns:180px minmax(0,1fr)!important;}
-}
-
-/* 2) Fix What I Do strip: no overflow/cut on desktop, MacBook and laptop */
-@media (min-width:1101px){
-  .what-grid-v2{
-    display:grid!important;
-    grid-template-columns:repeat(5,minmax(0,1fr))!important;
-    gap:0!important;
-    padding:1rem!important;
-    overflow:hidden!important;
-  }
-  .what-card-v2{
-    min-width:0!important;
-    width:100%!important;
-    display:flex!important;
-    align-items:center!important;
-    gap:.65rem!important;
-    padding:.85rem .75rem!important;
-    overflow:hidden!important;
-  }
-  .what-icon-v2{
-    width:42px!important;
-    min-width:42px!important;
-    height:42px!important;
-    flex:0 0 42px!important;
-  }
-  .what-card-v2>div:last-child{
-    min-width:0!important;
-    flex:1 1 auto!important;
-  }
-  .what-card-v2 b,
-  .what-card-v2 span{
-    white-space:normal!important;
-    overflow:visible!important;
-    text-overflow:clip!important;
-    word-break:normal!important;
-    overflow-wrap:break-word!important;
-    max-width:100%!important;
-  }
-  .what-card-v2 b{font-size:.76rem!important;line-height:1.32!important;}
-  .what-card-v2 span{font-size:.64rem!important;line-height:1.38!important;}
-}
-
-@media (min-width:1101px) and (max-width:1366px){
-  .what-grid-v2{grid-template-columns:repeat(5,minmax(0,1fr))!important;padding:.85rem!important;}
-  .what-card-v2{gap:.5rem!important;padding:.7rem .55rem!important;}
-  .what-icon-v2{width:38px!important;min-width:38px!important;height:38px!important;flex-basis:38px!important;font-size:1rem!important;}
-  .what-card-v2 b{font-size:.72rem!important;line-height:1.28!important;}
-  .what-card-v2 span{font-size:.61rem!important;line-height:1.34!important;}
-}
-
-@media (min-width:901px) and (max-width:1100px){
-  .what-grid-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
-  .what-card-v2{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.06)!important;}
-}
-</style>
-
-<!-- AKASH PATCH: prevent desktop/laptop content hiding/cutting -->
-<style id="akash-desktop-visible-no-cut-fix">
-/* Global: never allow cards to push page outside the viewport */
-html,body{max-width:100%!important;overflow-x:hidden!important;}
-#page-home,.home-v2,.home-shell,.left-stack,.main-stack,.glass-card,.hero-banner-v2,.what-grid-v2,.feature-grid-v2,.feature-card-v2,.project-mini{min-width:0!important;max-width:100%!important;}
-.home-v2{width:100%!important;max-width:100%!important;overflow-x:hidden!important;}
-.home-shell{width:100%!important;margin:0 auto!important;}
-.main-stack{overflow:hidden!important;}
-.hero-title-v2,.hero-desc-v2,.hero-subtitle-v2,.what-card-v2 b,.what-card-v2 span,.mini-title,.mini-desc,.section-pill,.quote-v2{overflow-wrap:break-word!important;word-break:normal!important;white-space:normal!important;}
-
-/* Normal desktop / MacBook: compact, full visible layout */
-@media (min-width:1101px) and (max-width:1366px){
-  .home-v2{padding:10px!important;}
-  .home-shell{grid-template-columns:minmax(250px,285px) minmax(0,1fr)!important;gap:12px!important;}
-  .profile-card-v2,.quick-card-v2,.tech-strip-v2{padding:1rem!important;}
-  .main-stack{gap:12px!important;}
-  .hero-banner-v2{grid-template-columns:minmax(0,1fr)!important;min-height:auto!important;padding:1.2rem!important;}
-  .hero-art-v2{display:none!important;}
-  .hero-title-v2{font-size:clamp(2rem,4.6vw,3.25rem)!important;line-height:1.05!important;}
-  .hero-desc-v2{max-width:100%!important;font-size:.82rem!important;line-height:1.55!important;}
-  .kpi-strip-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
-  .what-grid-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:.85rem!important;gap:.65rem!important;}
-  .what-card-v2{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.06)!important;padding:.7rem!important;}
-  .what-card-v2:nth-last-child(-n+2){border-bottom:0!important;}
-  .what-icon-v2{width:38px!important;min-width:38px!important;height:38px!important;flex:0 0 38px!important;}
-  .what-card-v2 b{font-size:.72rem!important;line-height:1.25!important;}
-  .what-card-v2 span{font-size:.61rem!important;line-height:1.35!important;}
-  .home-v2>.feature-grid-v2{grid-template-columns:1fr!important;width:100%!important;margin-top:12px!important;gap:12px!important;}
-  .home-v2>.feature-grid-v2 .feature-card-v2{min-height:auto!important;padding:1rem!important;}
-  .home-v2>.feature-grid-v2 .project-mini{grid-template-columns:150px minmax(0,1fr)!important;gap:1rem!important;}
-  .home-v2>.feature-grid-v2 .project-mini>div:last-child{min-width:0!important;}
-  .home-v2>.feature-grid-v2 .chart-thumb{max-width:150px!important;height:110px!important;}
-}
-
-/* Smaller desktop / 100% browser view: stack cleanly, so nothing hides */
-@media (min-width:761px) and (max-width:1100px){
-  .home-v2{padding:10px!important;}
-  .home-shell{grid-template-columns:1fr!important;max-width:100%!important;gap:12px!important;}
-  .left-stack{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;}
-  .left-stack .tech-strip-v2{grid-column:1/-1!important;}
-  .left-stack .tech-list-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
-  .main-stack{width:100%!important;overflow:hidden!important;}
-  .hero-banner-v2{grid-template-columns:1fr!important;min-height:auto!important;padding:1.1rem!important;}
-  .hero-art-v2{display:none!important;}
-  .hero-title-v2{font-size:clamp(2rem,7vw,3.2rem)!important;line-height:1.05!important;}
-  .kpi-strip-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
-  .what-grid-v2{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:.65rem!important;padding:.85rem!important;}
-  .what-card-v2{border-right:0!important;padding:.72rem!important;}
-  .home-v2>.feature-grid-v2{grid-template-columns:1fr!important;width:100%!important;gap:12px!important;}
-  .home-v2>.feature-grid-v2 .project-mini{grid-template-columns:145px minmax(0,1fr)!important;gap:.9rem!important;}
-  .home-v2>.feature-grid-v2 .project-mini>div:last-child{min-width:0!important;}
-  .home-v2>.feature-grid-v2 .chart-thumb{max-width:145px!important;height:105px!important;}
-}
-
-/* Keep mobile exactly clean */
-@media (max-width:760px){
-  .home-v2{padding:10px!important;overflow-x:hidden!important;}
-  .home-shell{grid-template-columns:1fr!important;}
-  .left-stack{display:flex!important;flex-direction:column!important;}
-  .what-grid-v2,.kpi-strip-v2,.left-stack .tech-list-v2,.home-v2>.feature-grid-v2{grid-template-columns:1fr!important;}
-  .hero-art-v2{display:none!important;}
-}
-</style>
+  document.addEventListener('DOMContentLoaded',()=>setTimeout(build,350));
+  window.addEventListener('load',()=>setTimeout(build,750));
+})();
+</script>
 
 </body>
 </html>
-
