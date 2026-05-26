@@ -3954,5 +3954,105 @@ nav{
 }
 </style>
 
+
+
+<!-- AKASH PATCH: DESKTOP / MACBOOK FULLSCREEN DASHBOARD FIX -->
+<style id="akash-desktop-fullscreen-dashboard-fix">
+/* Desktop and laptop: show full header and use the complete screen width */
+@media (min-width:1101px){
+  html,body{width:100%!important;max-width:100%!important;overflow-x:hidden!important;}
+  nav{
+    display:flex!important;
+    height:58px!important;min-height:58px!important;
+    padding:0 clamp(18px,1.6vw,32px)!important;
+  }
+  .nav-tabs{display:flex!important;visibility:visible!important;opacity:1!important;}
+  .nav-actions{display:flex!important;visibility:visible!important;opacity:1!important;}
+  .nav-hamburger{display:none!important;}
+  .mobile-drawer{display:none!important;}
+  .page{padding-top:58px!important;width:100%!important;max-width:100%!important;}
+
+  /* Home opens edge-to-edge on desktop / MacBook */
+  #page-home{min-height:100dvh!important;}
+  .home-v2{
+    width:100vw!important;max-width:100vw!important;
+    min-height:calc(100dvh - 58px)!important;
+    padding:clamp(12px,1.2vw,22px)!important;
+    overflow-x:hidden!important;
+  }
+  .home-shell{
+    width:100%!important;max-width:none!important;margin:0!important;
+    display:grid!important;
+    grid-template-columns:minmax(285px,330px) minmax(0,1fr)!important;
+    gap:clamp(14px,1.3vw,24px)!important;
+    align-items:start!important;
+  }
+  .left-stack{display:flex!important;flex-direction:column!important;gap:clamp(12px,1vw,18px)!important;}
+  .main-stack{width:100%!important;min-width:0!important;gap:clamp(12px,1vw,18px)!important;}
+  .hero-banner-v2{
+    width:100%!important;
+    min-height:clamp(300px,36vh,420px)!important;
+    grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr)!important;
+  }
+  .hero-art-v2{min-height:clamp(230px,31vh,340px)!important;}
+  .dashboard-3d{width:min(500px,100%)!important;height:clamp(230px,30vh,330px)!important;}
+  .kpi-strip-v2{grid-template-columns:repeat(4,minmax(0,1fr))!important;}
+
+  /* Core technologies stays vertical under Quick Connect on desktop */
+  .left-stack .tech-strip-v2{display:block!important;order:3!important;width:100%!important;}
+  .left-stack .tech-list-v2{display:grid!important;grid-template-columns:1fr!important;gap:.65rem!important;}
+  .main-stack>.tech-strip-v2{display:none!important;}
+
+  /* Latest Project + Recognition + Thought use full screen width */
+  .home-v2>.feature-grid-v2{
+    width:100%!important;max-width:none!important;margin:clamp(12px,1vw,18px) 0 0!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) minmax(0,1fr)!important;
+    gap:clamp(14px,1.2vw,22px)!important;
+    align-items:stretch!important;
+  }
+  .home-v2>.feature-grid-v2 .feature-card-v2{min-height:clamp(220px,25vh,310px)!important;}
+
+  /* Growth/dashboard page opens wide and clean on desktop/laptop */
+  #page-growth.sec,.growth-enhanced-section{
+    width:100vw!important;max-width:100vw!important;
+    min-height:calc(100dvh - 58px)!important;
+    padding:clamp(18px,1.6vw,34px)!important;
+    overflow-x:hidden!important;
+  }
+  #page-growth .growth-hero-panel,
+  #page-growth .growth-overview-strip,
+  #page-growth .growth-kpi-premium,
+  #page-growth .growth-visual-grid,
+  #page-growth .growth-visual-grid-enhanced,
+  #page-growth .growth-insight-grid,
+  #page-growth .growth-milestone-grid{
+    width:100%!important;max-width:none!important;
+  }
+  #page-growth .growth-kpi-premium{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:clamp(12px,1vw,18px)!important;}
+  #page-growth .growth-visual-grid-enhanced{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)!important;gap:clamp(14px,1.2vw,22px)!important;}
+  #page-growth .growth-insight-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;}
+  #page-growth .growth-visual-card.tall{min-height:clamp(360px,42vh,520px)!important;}
+  #page-growth .growth-visual-card{min-height:clamp(300px,34vh,420px)!important;}
+  #page-growth .growth-chart-box{height:clamp(270px,32vh,390px)!important;}
+  #page-growth .growth-chart-box.small{height:clamp(230px,28vh,320px)!important;}
+}
+
+/* MacBook/smaller laptop: keep desktop header but compress cards so nothing cuts */
+@media (min-width:1101px) and (max-width:1366px){
+  .home-v2{padding:12px!important;}
+  .home-shell{grid-template-columns:295px minmax(0,1fr)!important;gap:14px!important;}
+  .hero-banner-v2{min-height:300px!important;padding:1.15rem 1.25rem!important;}
+  .hero-title-v2{font-size:clamp(2.35rem,4.2vw,3.6rem)!important;}
+  .hero-desc-v2{font-size:.82rem!important;line-height:1.58!important;}
+  .dashboard-3d{transform:scale(.9);transform-origin:center right;}
+  .home-v2>.feature-grid-v2{grid-template-columns:1.15fr .9fr 1fr!important;gap:14px!important;}
+  .home-v2>.feature-grid-v2 .feature-card-v2{min-height:215px!important;padding:1rem!important;}
+  .nav-tab{padding:.3rem .62rem!important;font-size:.68rem!important;}
+  .soc-n{width:28px!important;height:28px!important;}
+  .btn-resume{padding:.3rem .72rem!important;}
+}
+</style>
+
 </body>
 </html>
