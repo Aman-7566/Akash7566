@@ -1,4 +1,4 @@
-
+<html lang="en">
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Akash Kourav — BI Analyst &amp; Power BI Developer</title>
@@ -756,6 +756,13 @@ img{max-width:100%;height:auto;}
 .kpi-strip-v2{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;padding:.9rem 1rem;}
 .kpi-v2{display:flex;align-items:center;gap:.65rem;padding:.55rem;border-radius:14px;background:rgba(255,255,255,.052);border:1px solid rgba(255,255,255,.08);}
 .kpi-icon-v2{width:40px;height:40px;border-radius:12px;background:rgba(232,83,10,.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}.kpi-v2 b{display:block;font-family:'Syne',sans-serif;font-size:1.2rem;color:var(--orange);line-height:1}.kpi-v2 span{font-size:.67rem;color:#d8deea;font-weight:650;}
+
+.logo-tech-pill{padding:.62rem .7rem;min-height:58px;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025));}
+.tech-logo-v2{width:34px;height:34px;object-fit:contain;flex-shrink:0;border-radius:10px;background:#fff;padding:4px;box-shadow:0 6px 16px rgba(0,0,0,.25);}
+.logo-tech-pill:hover .tech-logo-v2{transform:scale(1.08) rotate(-3deg);transition:transform .22s ease;}
+.technology-logo-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+@media(max-width:1200px){.technology-logo-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}}
+@media(max-width:700px){.technology-logo-grid{grid-template-columns:1fr!important;}.tech-logo-v2{width:32px;height:32px;}}
 .tech-strip-v2{padding:.85rem 1rem;}.tech-head-v2{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem;gap:.7rem;}.view-link-v2{border:0;background:rgba(232,83,10,.12);color:var(--orange);border-radius:999px;padding:.36rem .75rem;font-weight:800;font-size:.65rem;cursor:pointer;white-space:nowrap;}.tech-list-v2{display:grid;grid-template-columns:repeat(6,1fr);gap:.65rem;}.tech-pill-v2{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.085);border-radius:14px;padding:.6rem;min-width:0;}.tech-pill-v2 span:first-child{font-size:1.2rem}.tech-pill-v2 b{display:block;font-size:.7rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}.tech-pill-v2 small{display:block;font-size:.58rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .feature-grid-v2{display:grid;grid-template-columns:1.2fr .9fr 1fr;gap:.85rem;}.feature-card-v2{padding:1rem;min-height:160px;}.project-mini{display:grid;grid-template-columns:130px 1fr;gap:.8rem;align-items:center;}.chart-thumb{height:105px;border-radius:12px;background:linear-gradient(180deg,#eef4ff,#fff);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.2);}.chart-thumb::before{content:'';position:absolute;left:10px;right:10px;bottom:18px;height:55px;background:repeating-linear-gradient(90deg,var(--orange) 0 8px,transparent 8px 18px);opacity:.95}.chart-thumb::after{content:'';position:absolute;left:10px;right:10px;bottom:20px;height:55px;background:linear-gradient(135deg,transparent 43%,rgba(61,127,255,.35));clip-path:polygon(0 80%,22% 45%,42% 60%,62% 22%,100% 8%,100% 100%,0 100%)}.mini-title{font-size:.78rem;font-weight:800;margin-bottom:.35rem}.mini-desc{font-size:.7rem;color:#c9d0dc;line-height:1.45}.mini-btn{margin-top:.75rem;padding:.45rem .75rem;border-radius:8px;background:transparent;color:var(--orange);border:1px solid rgba(232,83,10,.45);font-weight:800;cursor:pointer}.award-medal{width:86px;height:86px;margin:.4rem auto .7rem;border-radius:50%;background:radial-gradient(circle,#fff 0%,#ffd08f 45%,var(--orange) 100%);display:flex;align-items:center;justify-content:center;font-size:2.4rem;box-shadow:0 10px 30px rgba(232,83,10,.25);}.quote-v2{font-size:.92rem;line-height:1.7;font-style:italic;color:#e7ebf5;margin-top:1rem}.quote-author-v2{font-size:.72rem;color:#c9d0dc;font-weight:800;margin-top:.8rem}.what-grid-v2{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;padding:1rem;}.what-card-v2{display:flex;align-items:center;gap:.65rem;padding:.75rem;border-right:1px solid rgba(255,255,255,.08);}.what-card-v2:last-child{border-right:0}.what-icon-v2{width:44px;height:44px;border-radius:13px;background:rgba(232,83,10,.12);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0}.what-card-v2 b{font-size:.76rem;display:block}.what-card-v2 span{font-size:.64rem;color:var(--muted);line-height:1.35;display:block;margin-top:.15rem}
 @media(max-width:1200px){.home-v2{padding:1rem}.home-shell{grid-template-columns:260px 1fr}.tech-list-v2{grid-template-columns:repeat(3,1fr)}.feature-grid-v2{grid-template-columns:1fr 1fr}.feature-grid-v2 .feature-card-v2:last-child{grid-column:1/-1}.what-grid-v2{grid-template-columns:repeat(3,1fr)}.what-card-v2{border-right:0}}
@@ -1083,11 +1090,11 @@ canvas{display:block;max-width:100%!important;}
 <button class="mobile-nav-tab" onclick="showPage('awards',this,true)">🏆 Awards</button>
 </div>
 <div class="mobile-socials">
-<a class="soc-n soc-li" href="https://linkedin.com/in/akashkourav" target="_blank" title="LinkedIn">in</a>
+<a class="soc-n soc-li" href="https://www.www.linkedin.com/in/akash-kourav-064047172-064047172" target="_blank" title="LinkedIn">in</a>
 <a class="soc-n soc-gh" href="https://github.com/akashkourav" target="_blank" title="GitHub">
 <svg fill="white" height="12" viewbox="0 0 24 24" width="12"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c.1.85.34 2.75-.5 6.23"></path></svg>
 </a>
-<a class="soc-n soc-em" href="mailto:akashkourav7566@gmail.com" title="Email">✉</a>
+<a class="soc-n soc-em" href="#contactSection" onclick="scrollToContact();return false;" title="Email">✉</a>
 <a class="soc-n soc-wa" href="https://wa.me/917509762086" target="_blank" title="WhatsApp">
 <svg fill="white" height="12" viewbox="0 0 24 24" width="12"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
 </a>
@@ -1114,11 +1121,11 @@ canvas{display:block;max-width:100%!important;}
 </div>
 <div class="nav-actions">
 <div class="socials-nav">
-<a class="soc-n soc-li" href="https://linkedin.com/in/akashkourav" target="_blank" title="LinkedIn">in</a>
+<a class="soc-n soc-li" href="https://www.www.linkedin.com/in/akash-kourav-064047172-064047172" target="_blank" title="LinkedIn">in</a>
 <a class="soc-n soc-gh" href="https://github.com/akashkourav" target="_blank" title="GitHub">
 <svg fill="white" height="12" viewbox="0 0 24 24" width="12"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0 1.5 3.78c.1.85.34 2.75-.5 6.23"></path></svg>
 </a>
-<a class="soc-n soc-em" href="mailto:akashkourav7566@gmail.com" title="Email">✉</a>
+<a class="soc-n soc-em" href="#contactSection" onclick="scrollToContact();return false;" title="Email">✉</a>
 <a class="soc-n soc-wa" href="https://wa.me/917509762086" target="_blank" title="WhatsApp">
 <svg fill="white" height="12" viewbox="0 0 24 24" width="12"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
 </a>
@@ -1149,9 +1156,9 @@ canvas{display:block;max-width:100%!important;}
 <div class="mini-stat-v2"><b>5★</b><span>Rating</span></div>
 </div>
 <div class="social-row-v2">
-<a href="https://linkedin.com/in/akashkourav" target="_blank" title="LinkedIn">in</a>
+<a href="https://www.www.linkedin.com/in/akash-kourav-064047172-064047172" target="_blank" title="LinkedIn">in</a>
 <a href="https://github.com/akashkourav" target="_blank" title="GitHub">GH</a>
-<a href="mailto:akashkourav7566@gmail.com" title="Email">✉</a>
+<a href="#contactSection" onclick="scrollToContact();return false;" title="Email">✉</a>
 <a href="tel:+917509762086" title="Phone">☎</a>
 </div>
 </div>
@@ -1159,20 +1166,25 @@ canvas{display:block;max-width:100%!important;}
 <div class="section-pill">Quick Contact</div>
 <div class="contact-list-v2">
 <a class="contact-item-v2" href="tel:+917509762086"><span class="ci-v2">📞</span><div><small>Phone</small><b>+91 75097 62086</b></div></a>
-<a class="contact-item-v2" href="mailto:akashkourav7566@gmail.com"><span class="ci-v2">✉️</span><div><small>Email</small><b>akashkourav7566@gmail.com</b></div></a>
+<a class="contact-item-v2" href="#contactSection" onclick="scrollToContact();return false;"><span class="ci-v2">✉️</span><div><small>Email</small><b>akashkourav7566@gmail.com</b></div></a>
 <div class="contact-item-v2"><span class="ci-v2">📍</span><div><small>Location</small><b>Mumbai, India</b></div></div>
-<a class="contact-item-v2" href="https://linkedin.com/in/akashkourav" target="_blank"><span class="ci-v2">in</span><div><small>LinkedIn</small><b>linkedin.com/in/akashkourav</b></div></a>
+<div class="contact-item-v2"><span class="ci-v2">🎓</span><div><small>Education</small><b>MBA Fin &amp; IT</b></div></div>
+<a class="contact-item-v2" href="https://www.www.linkedin.com/in/akash-kourav-064047172-064047172" target="_blank"><span class="ci-v2">in</span><div><small>LinkedIn</small><b>www.www.linkedin.com/in/akash-kourav-064047172-064047172</b></div></a>
 </div>
 <button class="connect-btn-v2" onclick="scrollToContact()">✈ Let's Connect</button>
 </div><div class="glass-card tech-strip-v2">
-<div class="tech-head-v2"><div class="section-pill">Core Technologies</div><button class="view-link-v2" onclick="showPage('skills',document.querySelectorAll('.nav-tab')[2])">View All Skills →</button></div>
-<div class="tech-list-v2">
-<div class="tech-pill-v2"><span>📊</span><div><b>Power BI</b><small>Expert · 95%</small></div></div>
-<div class="tech-pill-v2"><span>🗄️</span><div><b>SQL</b><small>Advanced · 90%</small></div></div>
-<div class="tech-pill-v2"><span>🐍</span><div><b>Python</b><small>Intermediate · 80%</small></div></div>
-<div class="tech-pill-v2"><span>☁️</span><div><b>Azure</b><small>Intermediate · 70%</small></div></div>
-<div class="tech-pill-v2"><span>📈</span><div><b>Tableau</b><small>Advanced · 85%</small></div></div>
-<div class="tech-pill-v2"><span>⚙️</span><div><b>ETL / DAX</b><small>Advanced · 88%</small></div></div>
+<div class="tech-head-v2"><div class="section-pill">Technology I Work With</div><button class="view-link-v2" onclick="showPage('skills',document.querySelectorAll('.nav-tab')[2])">View All Skills →</button></div>
+<div class="tech-list-v2 technology-logo-grid">
+
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI logo"><div><b>Power BI</b><small>Dashboards · DAX · Reports</small></div></div>
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://img.icons8.com/color/96/power-apps.png" alt="Power Apps logo"><div><b>Power Apps</b><small>Canvas · Model-driven Apps</small></div></div>
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://img.icons8.com/fluency/96/microsoft-power-automate-2020.png" alt="Power Automate logo"><div><b>Power Automate</b><small>Flows · Automation</small></div></div>
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure Cloud logo"><div><b>Azure Cloud</b><small>Cloud · Data Services</small></div></div>
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://cdn.simpleicons.org/snowflake/29B5E8" alt="Snowflake logo"><div><b>Snowflake</b><small>Cloud Data Warehouse</small></div></div>
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://img.icons8.com/color/96/sql.png" alt="SQL logo"><div><b>SQL</b><small>Queries · Data Modeling</small></div></div>
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://cdn.simpleicons.org/dataiku/2AB1AC" alt="Dataiku logo"><div><b>Dataiku</b><small>AI · ML · Data Science</small></div></div>
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://img.icons8.com/color/96/microsoft.png" alt="Microsoft Fabric logo"><div><b>Fabric</b><small>Lakehouse · Analytics</small></div></div>
+<div class="tech-pill-v2 logo-tech-pill"><img class="tech-logo-v2" src="https://img.icons8.com/color/96/visual-basic.png" alt="VBA logo"><div><b>VBA</b><small>Excel Automation</small></div></div>
 </div>
 </div>
 </aside>
@@ -1279,7 +1291,7 @@ canvas{display:block;max-width:100%!important;}
 <div class="contact-header">
 <span class="sec-label-sm">Let's Connect</span>
 <h2>Get In Touch</h2>
-<p>Have a project in mind? Submit your details — they will be sent to my email and WhatsApp instantly.</p>
+<p>Have a project in mind? Submit your details — they will be sent directly to my email.</p>
 </div>
 <div class="contact-form">
 <div class="form-grid">
@@ -1531,9 +1543,22 @@ canvas{display:block;max-width:100%!important;}
 <button class="csend" onclick="sendChat()">➤</button>
 </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 const OWNER_EMAIL='akashkourav7566@gmail.com';
-const OWNER_WHATSAPP='+917509762086';
+const OWNER_WHATSAPP='917509762086';
+
+// ✅ EmailJS configuration added by ChatGPT
+// Your contact form will send email to OWNER_EMAIL without page redirect.
+const EMAILJS_PUBLIC_KEY='Lpr2NL5FGYWoOa_VN';
+const EMAILJS_SERVICE_ID='service_mwx1zfp';
+const EMAILJS_TEMPLATE_ID='template_6ei1bcm';
+
+// Initialize EmailJS safely
+try{
+  if(window.emailjs){ emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); }
+}catch(e){ console.warn('EmailJS init failed:', e); }
+
 let chatOpen=false,marketLoaded=false,homeMarketLoaded=false;
 
 // ── THOUGHTS ──
@@ -1587,7 +1612,7 @@ const KB={
   experience:'Experience:\n• Associate Analyst – BI at XYZ Analytics (2023–Present): 15+ dashboards, 40% effort reduction\n• Data Analyst Intern at ABC Solutions (2022–2023): Tableau, 500K+ row EDA\n• B.Tech CS, University of Mumbai (2018–2022)',
   impact:'Impact:\n• 50+ dashboards built\n• 40% time saved\n• 30% cost savings\n• 60% faster dashboards via SQL optimization\n• 8+ hrs/week saved via automation',
   awards:'Awards:\n• 🏆 Star Performer Award — Q3 2024\n• 🌟 Client Appreciation Letter — zero-revision delivery',
-  hire:'To hire or connect with Akash:\n📧 akashkourav7566@gmail.com\n📱 +91 75097 62086\n🔗 linkedin.com/in/akashkourav\n\nOpen to: Full-time roles, Freelance, Collaborations, Mentorship\n\nSay "open contact form" to reach out directly!',
+  hire:'To hire or connect with Akash:\n📧 akashkourav7566@gmail.com\n📱 +91 75097 62086\n🔗 www.www.linkedin.com/in/akash-kourav-064047172-064047172\n\nOpen to: Full-time roles, Freelance, Collaborations, Mentorship\n\nSay "open contact form" to reach out directly!',
   contact_form:'Opening the contact form now! Fill in your details and Akash will respond within 24 hours. 📩',
 };
 function getBotReply(msg){
@@ -1651,69 +1676,60 @@ async function handleFormSubmit(){
   const email=document.getElementById('f-email').value.trim();
   const purpose=document.getElementById('f-purpose').value;
   const desc=document.getElementById('f-desc').value.trim();
-  if(!name||!email||!purpose){showToast('⚠️ Please fill Name, Email & Purpose');return;}
+
+  if(!name || !email || !purpose){
+    showToast('⚠️ Please fill Name, Email & Purpose');
+    return;
+  }
+
+  if(!window.emailjs){
+    showToast('❌ EmailJS not loaded. Check internet/CDN access and try again.',8500);
+    return;
+  }
 
   const btn=document.getElementById('formSubmitBtn');
   btn.disabled=true;
-  btn.textContent='⏳ Sending...';
+  btn.textContent='⏳ Sending Email...';
 
-  const msgBody=`New Contact Request from Portfolio:
+  const submittedAt=new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata'});
 
-Name: ${name}
-Mobile: ${mobile||'Not provided'}
-Email: ${email}
-Purpose: ${purpose}
-Message: ${desc||'No message'}
-
-Submitted from Akash Kourav Portfolio`;
-  const waMsg=`🔔 *New Portfolio Contact*
-
-*Name:* ${name}
-*Mobile:* ${mobile||'N/A'}
-*Email:* ${email}
-*Purpose:* ${purpose}
-*Message:* ${desc||'N/A'}`;
-  const waLink=`https://wa.me/${OWNER_WHATSAPP.replace(/\D/g,'')}?text=${encodeURIComponent(waMsg)}`;
-
-  // WhatsApp does not allow any website to send silently without official WhatsApp Cloud API.
-  // This opens WhatsApp instantly with all details filled, so the visitor can tap Send.
-  let waWindow=null;
-  try{waWindow=window.open('', '_blank');}catch(e){}
+  // Send many variable names so it works with most EmailJS templates.
+  const templateParams={
+    to_email: OWNER_EMAIL,
+    email_to: OWNER_EMAIL,
+    user_email: email,
+    from_email: email,
+    reply_to: email,
+    from_name: name,
+    user_name: name,
+    name: name,
+    mobile: mobile || 'Not provided',
+    phone: mobile || 'Not provided',
+    purpose: purpose,
+    message: desc || 'No message',
+    description: desc || 'No message',
+    submitted_at: submittedAt,
+    time: submittedAt,
+    page_url: location.href,
+    subject: 'New Portfolio Contact Form Lead - Akash Portfolio'
+  };
 
   try{
-    const payload={
-      name,
-      mobile: mobile || 'Not provided',
-      email,
-      purpose,
-      message: desc || 'No message',
-      _subject:`Portfolio Contact: ${purpose} from ${name}`,
-      _template:'table',
-      _captcha:'false'
-    };
+    await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,templateParams);
 
-    const res=await fetch(`https://formsubmit.co/ajax/${OWNER_EMAIL}`,{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
-    });
+    ['f-name','f-mobile','f-email','f-desc'].forEach(id=>{document.getElementById(id).value='';});
+    document.getElementById('f-purpose').selectedIndex=0;
 
-    if(!res.ok) throw new Error('Email service failed');
-
-    if(waWindow){waWindow.location.href=waLink;}else{window.open(waLink,'_blank');}
-    showToast('✅ Details sent to email. WhatsApp message opened with all details.',5200);
+    showToast('✅ Message sent successfully to Akash email!',6500);
   }catch(err){
-    if(waWindow){waWindow.location.href=waLink;}else{window.open(waLink,'_blank');}
-    const mailtoLink=`mailto:${OWNER_EMAIL}?subject=Portfolio Contact: ${encodeURIComponent(purpose)} from ${encodeURIComponent(name)}&body=${encodeURIComponent(msgBody)}`;
-    setTimeout(()=>window.open(mailtoLink,'_blank'),250);
-    showToast('⚠️ Email API fallback opened. WhatsApp message also opened.',6000);
+    console.error('EmailJS send failed:',err);
+    showToast('❌ Email not sent. Check EmailJS service/template variables and Gmail connection.',9000);
+  }finally{
+    btn.disabled=false;
+    btn.textContent='🚀 Send Message';
   }
-
-  ['f-name','f-mobile','f-email','f-desc'].forEach(id=>{document.getElementById(id).value='';});
-  document.getElementById('f-purpose').selectedIndex=0;
-  btn.disabled=false;
-  btn.textContent='🚀 Send Message';
 }
+
 
 // ── CHATBOT ──
 function toggleChat(){
@@ -1941,7 +1957,7 @@ function fillAdminForm(){
   document.getElementById('editEmail').value=data.email||'akashkourav7566@gmail.com';
   document.getElementById('editPhone').value=data.phone||'+91 75097 62086';
   document.getElementById('editLocation').value=data.location||'Mumbai, India';
-  document.getElementById('editLinkedin').value=data.linkedin||'linkedin.com/in/akashkourav';
+  document.getElementById('editLinkedin').value=data.linkedin||'www.www.linkedin.com/in/akash-kourav-064047172-064047172';
   document.getElementById('editDesc').value=data.desc||getText('.hero-desc-v2');
   document.getElementById('editDashboards').value=data.dashboards||'50+';
   document.getElementById('editExperience').value=data.experience||'2+';
@@ -3199,7 +3215,7 @@ body.editing .ak-edit-current-tab{display:block}
 (function(){
   const STORE='akash_portfolio_saved_profile_v1';
   const DEFAULTS={
-    linkedin:'linkedin.com/in/akashkourav',
+    linkedin:'www.www.linkedin.com/in/akash-kourav-064047172-064047172',
     github:'github.com/akashkourav',
     email:'akashkourav7566@gmail.com',
     whatsapp:'917509762086',
@@ -3601,7 +3617,7 @@ body.editing .ak-edit-current-tab{display:block}
 .main-stack{width:100% !important;overflow:visible !important;}
 .glass-card{max-width:100% !important;}
 
-/* Core Technologies should wrap instead of squeezing/cutting text */
+/* Technology I Work With should wrap instead of squeezing/cutting text */
 .tech-list-v2{
   display:grid !important;
   grid-template-columns:repeat(auto-fit,minmax(150px,1fr)) !important;
@@ -3686,7 +3702,7 @@ body.editing .ak-edit-current-tab{display:block}
     email:'akashkourav7566@gmail.com',
     phone:'+91 75097 62086',
     whatsapp:'917509762086',
-    linkedin:'linkedin.com/in/akashkourav',
+    linkedin:'www.www.linkedin.com/in/akash-kourav-064047172-064047172',
     github:'github.com/akashkourav',
     naukri:'https://www.naukri.com/mnjuser/profile'
   };
@@ -3824,7 +3840,7 @@ body.editing .ak-edit-current-tab{display:block}
 .home-v2{padding-left:clamp(14px,2vw,32px)!important;padding-right:clamp(14px,2vw,32px)!important;}
 .home-shell{max-width:1780px!important;width:100%!important;grid-template-columns:minmax(255px,330px) minmax(0,1fr)!important;gap:clamp(14px,1.5vw,24px)!important;}
 .main-stack{width:100%!important;}
-/* Data Analysis / What I Do row above Core Technologies */
+/* Data Analysis / What I Do row above Technology I Work With */
 .what-grid-v2{order:0!important;display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:.85rem!important;padding:1rem!important;}
 .tech-strip-v2{order:1!important;width:100%!important;padding:1rem 1.1rem!important;}
 .feature-grid-v2{order:2!important;width:100%!important;display:grid!important;grid-template-columns:1.25fr .95fr 1.05fr!important;gap:clamp(.9rem,1.3vw,1.25rem)!important;align-items:stretch!important;}
@@ -3871,7 +3887,7 @@ body.editing .ak-edit-current-tab{display:block}
 }
 </style>
 <style>
-/* === AKASH FINAL LAYOUT FIX: Core Technologies left + full-width latest cards === */
+/* === AKASH FINAL LAYOUT FIX: Technology I Work With left + full-width latest cards === */
 .home-v2{padding-left:clamp(14px,1.5vw,28px)!important;padding-right:clamp(14px,1.5vw,28px)!important;}
 .home-shell{max-width:1780px!important;width:100%!important;margin:0 auto!important;grid-template-columns:minmax(300px,360px) minmax(0,1fr)!important;align-items:start!important;}
 .left-stack{gap:.9rem!important;}
