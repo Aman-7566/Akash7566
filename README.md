@@ -1,7 +1,5 @@
-<!DOCTYPE html>
 
 <html lang="en">
-<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
 <title>Akash Kourav — BI Analyst &amp; Power BI Developer</title>
@@ -4256,6 +4254,190 @@ nav{
   });
 })();
 </script>
+
+
+<!-- AKASH PATCH: Full-page Experience Journey + Data Analysis/Dashboard Development Section -->
+<style id="ak-full-page-experience-data-section">
+/* FULL PAGE: Data Analysis / Dashboard Development / What I Do cards */
+#page-home .what-grid-v2,
+#page-home .what-i-do-grid,
+#page-home .what-grid,
+#page-home .services-grid{
+  width:calc(100vw - 32px)!important;
+  max-width:1780px!important;
+  margin-left:50%!important;
+  transform:translateX(-50%)!important;
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr))!important;
+  gap:clamp(.8rem,1vw,1.15rem)!important;
+  padding:clamp(1rem,1.2vw,1.45rem)!important;
+  border-radius:24px!important;
+  border:1px solid rgba(255,255,255,.10)!important;
+  background:
+    radial-gradient(circle at 0% 0%,rgba(232,83,10,.14),transparent 30%),
+    radial-gradient(circle at 100% 0%,rgba(61,127,255,.12),transparent 34%),
+    linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.018))!important;
+  box-shadow:0 20px 55px rgba(0,0,0,.30)!important;
+}
+#page-home .what-card-v2,
+#page-home .what-card,
+#page-home .service-card{
+  min-height:120px!important;
+  width:100%!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  border-radius:18px!important;
+  background:rgba(7,9,15,.38)!important;
+  padding:1.05rem!important;
+  transition:.25s ease!important;
+}
+#page-home .what-card-v2:hover,
+#page-home .what-card:hover,
+#page-home .service-card:hover{
+  transform:translateY(-5px)!important;
+  border-color:rgba(232,83,10,.38)!important;
+  background:rgba(232,83,10,.06)!important;
+  box-shadow:0 16px 38px rgba(232,83,10,.12)!important;
+}
+#page-home .what-card-v2 b,
+#page-home .what-card b,
+#page-home .service-card b{
+  font-size:.9rem!important;
+  color:#fff!important;
+}
+#page-home .what-card-v2 span,
+#page-home .what-card span,
+#page-home .service-card span{
+  font-size:.74rem!important;
+  line-height:1.6!important;
+  color:#bac4d5!important;
+}
+#page-home .what-icon-v2,
+#page-home .what-icon,
+#page-home .service-icon{
+  font-size:1.55rem!important;
+  filter:drop-shadow(0 8px 18px rgba(232,83,10,.18))!important;
+}
+
+/* FULL PAGE: Home Experience Journey section */
+#page-home .ak-home-exp-wrap,
+#page-home #akHomeExperienceJourney,
+#page-home .experience-journey,
+#page-home .home-experience-journey{
+  width:calc(100vw - 32px)!important;
+  max-width:1780px!important;
+  margin:1.25rem 0 0 50%!important;
+  transform:translateX(-50%)!important;
+  padding:clamp(1.1rem,1.35vw,1.6rem)!important;
+  border-radius:24px!important;
+}
+#page-home .ak-home-exp-grid,
+#page-home .experience-journey-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important;
+  gap:clamp(.9rem,1.15vw,1.25rem)!important;
+  width:100%!important;
+}
+#page-home .ak-home-exp-card,
+#page-home .experience-card{
+  width:100%!important;
+  min-height:300px!important;
+  padding:1.28rem!important;
+}
+#page-home .ak-home-exp-head{
+  padding:0 0 1rem!important;
+}
+#page-home .ak-home-exp-title{
+  font-size:clamp(1.05rem,1.45vw,1.55rem)!important;
+  letter-spacing:.12em!important;
+}
+#page-home .ak-home-exp-linebox{
+  width:100%!important;
+  padding-left:.25rem!important;
+  padding-right:.25rem!important;
+}
+
+/* FULL PAGE: Experience tab timeline */
+#page-experience.sec,
+#page-experience .sec{
+  width:100%!important;
+  max-width:100%!important;
+  padding-left:clamp(14px,2vw,36px)!important;
+  padding-right:clamp(14px,2vw,36px)!important;
+}
+#page-experience .exp-timeline{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:0!important;
+}
+#page-experience .exp-timeline::before{
+  left:23px!important;
+}
+#page-experience .exp-item{
+  width:100%!important;
+  align-items:stretch!important;
+  gap:1.25rem!important;
+}
+#page-experience .exp-dot{
+  width:48px!important;
+  min-width:48px!important;
+  height:48px!important;
+  border-radius:14px!important;
+  box-shadow:0 0 0 4px rgba(232,83,10,.10),0 14px 26px rgba(232,83,10,.24)!important;
+}
+#page-experience .exp-card{
+  width:100%!important;
+  flex:1!important;
+  min-height:170px!important;
+  padding:1.4rem 1.6rem!important;
+  border-radius:18px!important;
+  background:
+    radial-gradient(circle at 0% 0%,rgba(232,83,10,.10),transparent 25%),
+    linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.02))!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  box-shadow:0 16px 42px rgba(0,0,0,.26)!important;
+}
+#page-experience .exp-card:hover{
+  transform:translateX(5px) translateY(-2px)!important;
+  border-color:rgba(232,83,10,.36)!important;
+  box-shadow:0 20px 50px rgba(232,83,10,.10)!important;
+}
+#page-experience .exp-title{font-size:clamp(.98rem,1.2vw,1.18rem)!important;color:#fff!important;}
+#page-experience .exp-company{font-weight:800!important;color:var(--orange)!important;}
+#page-experience .exp-bullets li{font-size:.8rem!important;line-height:1.75!important;color:#ccd6e5!important;}
+
+@media(max-width:900px){
+  #page-home .what-grid-v2,
+  #page-home .what-i-do-grid,
+  #page-home .what-grid,
+  #page-home .services-grid,
+  #page-home .ak-home-exp-wrap,
+  #page-home #akHomeExperienceJourney,
+  #page-home .experience-journey,
+  #page-home .home-experience-journey{
+    width:calc(100vw - 20px)!important;
+  }
+  #page-home .ak-home-exp-card,
+  #page-home .experience-card{min-height:auto!important;}
+  #page-experience .exp-item{gap:.8rem!important;}
+  #page-experience .exp-dot{width:42px!important;min-width:42px!important;height:42px!important;}
+  #page-experience .exp-card{padding:1.05rem!important;}
+}
+@media(max-width:560px){
+  #page-home .what-grid-v2,
+  #page-home .what-i-do-grid,
+  #page-home .what-grid,
+  #page-home .services-grid,
+  #page-home .ak-home-exp-wrap,
+  #page-home #akHomeExperienceJourney,
+  #page-home .experience-journey,
+  #page-home .home-experience-journey{
+    width:calc(100vw - 16px)!important;
+    padding:.9rem!important;
+  }
+  #page-home .ak-home-exp-title{font-size:.95rem!important;}
+}
+</style>
 
 </body>
 </html>
