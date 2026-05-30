@@ -1203,6 +1203,7 @@ canvas{display:block;max-width:100%!important;}
 <div class="hero-actions-v2">
 <button class="btn-work-v2" onclick="showPage('projects',document.querySelectorAll('.nav-tab')[3])">View My Work →</button>
 <button class="btn-hire-v2" onclick="scrollToContact()">♙ Hire Me</button>
+<button class="btn-download-resume" type="button" onclick="downloadResumeFile(event)">⬇ Download Resume</button>
 </div>
 </div>
 <div class="hero-art-v2">
@@ -4096,6 +4097,331 @@ nav{
   }
   document.addEventListener('DOMContentLoaded',()=>setTimeout(build,350));
   window.addEventListener('load',()=>setTimeout(build,750));
+})();
+</script>
+
+
+<style id="ak-image-theme-motion-upgrade">
+/* === Akash portfolio theme/motion upgrade based on shared reference image === */
+:root{--ak-neon:#ff7a1a;--ak-pink:#ff4f9a;--ak-violet:#7c4dff;--ak-panel:rgba(14,18,31,.78);--ak-panel2:rgba(22,27,43,.72);--ak-line:rgba(255,122,26,.36);--ak-glow:0 18px 60px rgba(255,102,22,.16),0 0 0 1px rgba(255,255,255,.06) inset;}
+body{background:radial-gradient(circle at 76% 10%,rgba(124,77,255,.22),transparent 36%),radial-gradient(circle at 12% 0%,rgba(255,122,26,.14),transparent 32%),linear-gradient(135deg,#05070d 0%,#080d18 45%,#150d29 100%)!important;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 60% 20%,#000 0%,transparent 72%);}
+nav,.info-panel,.profile-glass-card,.thought-card,.scard,.tech-chip,.market-card,.cert-card,.sk,.proj,.exp-card,.award-card,.contact-form,.gkpi,.market-kpi-card,.hero-visual-wrap,#page-home .ak-home-exp-wrap,#page-home .ak-home-exp-card,.home-skill-board,.home-feature-card,.quick-card,.stat-card,[class*="card"],[class*="tab"],section{transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s cubic-bezier(.22,1,.36,1),border-color .28s ease,background .28s ease,filter .28s ease!important;}
+.info-panel,.profile-glass-card,.thought-card,.scard,.tech-chip,.market-card,.cert-card,.sk,.proj,.exp-card,.award-card,.contact-form,.gkpi,.market-kpi-card,.hero-visual-wrap,#page-home .ak-home-exp-wrap,#page-home .ak-home-exp-card,.home-skill-board,.home-feature-card,.quick-card,.stat-card{background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.022))!important;border-color:rgba(255,255,255,.11)!important;box-shadow:0 16px 42px rgba(0,0,0,.28)!important;backdrop-filter:blur(18px) saturate(150%);}
+.info-panel:hover,.profile-glass-card:hover,.thought-card:hover,.scard:hover,.tech-chip:hover,.market-card:hover,.cert-card:hover,.sk:hover,.proj:hover,.exp-card:hover,.award-card:hover,.gkpi:hover,.market-kpi-card:hover,.hero-visual-wrap:hover,#page-home .ak-home-exp-card:hover,.home-skill-board:hover,.home-feature-card:hover,.quick-card:hover,.stat-card:hover{transform:translateY(-7px) scale(1.012)!important;border-color:var(--ak-line)!important;box-shadow:var(--ak-glow)!important;filter:saturate(1.08);}
+button,a,.nav-tab,.mobile-nav-tab,.cqbtn,.btn-primary,.btn-secondary,.btn-resume,.thought-refresh,.refresh-small,.form-submit,.soc-n,[role="button"],.info-item{transition:transform .18s cubic-bezier(.2,1,.3,1),box-shadow .18s ease,background .18s ease,border-color .18s ease,filter .18s ease!important;transform-style:preserve-3d;}
+button:hover,a:hover,.nav-tab:hover,.mobile-nav-tab:hover,.cqbtn:hover,.btn-primary:hover,.btn-secondary:hover,.btn-resume:hover,.thought-refresh:hover,.refresh-small:hover,.form-submit:hover,.soc-n:hover,.info-item:hover{transform:translateY(-3px) scale(1.035)!important;box-shadow:0 12px 34px rgba(255,98,20,.22)!important;filter:saturate(1.15);}
+button:active,a:active,.nav-tab:active,.mobile-nav-tab:active,.cqbtn:active,.btn-primary:active,.btn-secondary:active,.btn-resume:active,.thought-refresh:active,.refresh-small:active,.form-submit:active,.soc-n:active,.info-item:active{transform:translateY(1px) scale(.97)!important;}
+.ak-selected,.nav-tab.active,.mobile-nav-tab.active,.cqbtn.active,.btn-primary.active,.btn-secondary.active{background:linear-gradient(135deg,var(--ak-neon),var(--ak-pink),var(--ak-violet))!important;color:#fff!important;border-color:rgba(255,255,255,.18)!important;box-shadow:0 0 0 1px rgba(255,255,255,.09) inset,0 0 28px rgba(255,116,26,.38)!important;animation:akSelectedPulse 1.8s ease-in-out infinite;}
+@keyframes akSelectedPulse{0%,100%{box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 0 20px rgba(255,116,26,.28)}50%{box-shadow:0 0 0 1px rgba(255,255,255,.16) inset,0 0 36px rgba(124,77,255,.38)}}
+.ak-click-pop{animation:akClickPop .38s cubic-bezier(.2,1.4,.35,1)!important;}
+@keyframes akClickPop{0%{transform:scale(.96) rotateX(0)}45%{transform:scale(1.045) rotateX(7deg)}100%{transform:scale(1) rotateX(0)}}
+.profile-glass-card,.profile-card,.profile-img-wrap,.profile-photo,.profile-photo-v2,.pimg{transform-style:preserve-3d;perspective:900px;}
+.profile-img-wrap{overflow:visible!important;cursor:pointer;}
+.profile-photo,.profile-photo-v2,.pimg{border-radius:50%!important;object-fit:cover!important;aspect-ratio:1/1!important;transition:transform .6s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,filter .35s ease!important;will-change:transform;}
+.profile-img-wrap:hover .profile-photo,.profile-img-wrap:hover .profile-photo-v2,.profile-img-wrap:hover .pimg,.profile-photo:hover,.profile-photo-v2:hover,.pimg:hover{transform:scale(1.13) translateZ(28px)!important;box-shadow:0 18px 42px rgba(255,122,26,.42),0 0 0 6px rgba(255,122,26,.09)!important;filter:saturate(1.12) contrast(1.05);}
+.profile-glass-card.ak-profile-zoom,.profile-img-wrap.ak-profile-zoom,.profile-photo.ak-profile-zoom,.profile-photo-v2.ak-profile-zoom,.pimg.ak-profile-zoom{animation:akProfile3D .7s cubic-bezier(.2,1.3,.35,1)!important;}
+@keyframes akProfile3D{0%{transform:perspective(900px) scale(1) rotateX(0) rotateY(0)}45%{transform:perspective(900px) scale(1.12) rotateX(8deg) rotateY(-10deg) translateZ(42px)}100%{transform:perspective(900px) scale(1) rotateX(0) rotateY(0)}}
+.page.active{animation:akPageIn .42s cubic-bezier(.22,1,.36,1)!important;}
+@keyframes akPageIn{from{opacity:0;transform:translateY(18px) scale(.985);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+.hero-name,.card-name{background:linear-gradient(90deg,#fff,var(--ak-neon),var(--ak-pink),#fff);-webkit-background-clip:text;background-clip:text;color:transparent!important;background-size:220% 100%;animation:akTextGlow 5s linear infinite;}
+@keyframes akTextGlow{to{background-position:220% 0}}
+.chat-fab{background:linear-gradient(135deg,var(--ak-neon),var(--ak-pink),var(--ak-violet))!important;box-shadow:0 12px 34px rgba(255,98,20,.45)!important;}
+.cwin{border-color:rgba(255,122,26,.34)!important;background:linear-gradient(145deg,rgba(12,16,28,.96),rgba(22,14,42,.96))!important;box-shadow:0 28px 80px rgba(0,0,0,.66),0 0 44px rgba(124,77,255,.16)!important;}
+@media (max-width:700px){.info-panel:hover,.profile-glass-card:hover,.thought-card:hover,.scard:hover,.tech-chip:hover,.market-card:hover,.cert-card:hover,.sk:hover,.proj:hover,.exp-card:hover,.award-card:hover,.gkpi:hover,.market-kpi-card:hover{transform:translateY(-3px) scale(1.005)!important}.profile-photo:hover,.profile-photo-v2:hover,.pimg:hover{transform:scale(1.08)!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<script id="ak-interaction-chatbot-upgrade">
+(function(){
+  const qs=s=>document.querySelector(s), qsa=s=>Array.from(document.querySelectorAll(s));
+  function timeGreeting(){const h=new Date().getHours();return h<12?'Good Morning':h<17?'Good Afternoon':'Good Evening';}
+  function openChatWithGreeting(){
+    const win=qs('#chatWin'); if(!win) return;
+    win.classList.add('open'); window.chatOpen=true;
+    const msgs=qs('#cmsgs');
+    if(msgs && !msgs.dataset.autoGreeting){msgs.dataset.autoGreeting='1'; setTimeout(()=>{ if(typeof appendMsg==='function') appendMsg('bot',`${timeGreeting()}, how may I assist you today?`);},550);}
+  }
+  function norm(s){return String(s||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();}
+  const has=(m,arr)=>arr.some(x=>m.includes(x));
+  window.getBotReply=function(msg){
+    const m=norm(msg);
+    if(/^(hi|hii|hello|hey|heyy|hola|namaste|namaskar)$/.test(m) || has(m,['good morning','good afternoon','good evening'])) return 'Hello! How may I assist you?';
+    if(has(m,['experience','work history','job','company','role','career','employment'])) return 'Experience: BI Developer / BI Analyst profile with Power BI, Power Platform, Azure, SQL, Snowflake and automation work. Focus: dashboards, data modeling, reporting and business insights.';
+    if(has(m,['skill','skills','technology','technologies','tools','expertise','abilities','tech stack'])) return 'Skills: Power BI, DAX, Power Query, SQL, Azure Cloud, Power Apps, Power Automate, Snowflake, Fabric, Dataiku, ETL and reporting automation.';
+    if(has(m,['about','profile','summary','bio','who are you','who is akash','introduce'])) return 'Akash Kourav is a BI Developer and BI Analyst who turns raw data into clear dashboards, automated reports and decision-ready insights.';
+    if(has(m,['project','projects','work','portfolio','dashboard','dashboards','apps','application'])) return 'Projects: Power BI dashboards, KPI trackers, data models, ETL/report automation, Power Apps and business intelligence solutions.';
+    if(has(m,['contact','email','phone','linkedin','connect','whatsapp','reach','hire'])) return 'Contact: Use the Quick Contact / Let’s Connect section on this website to reach Akash directly by email, phone, LinkedIn or WhatsApp.';
+    if(has(m,['certification','certifications','cert','credential'])) return 'Certifications: Microsoft Power BI, Power Platform, Azure, Fabric and data analytics focused credentials are highlighted in the Certifications section.';
+    if(has(m,['award','recognition','achievement','appreciation'])) return 'Recognition: Client appreciation and delivery-focused recognition for BI solutions, automation and impactful insights.';
+    if(has(m,['location','where'])) return 'Location: Akash is based in India and open to professional BI, data and cloud opportunities.';
+    return 'Oops! I don’t have this detail right now. Please contact Akash directly.';
+  };
+  function addMotionHandlers(){
+    const clickable='button,a,.nav-tab,.mobile-nav-tab,.cqbtn,.btn-primary,.btn-secondary,.btn-resume,.soc-n,.info-item,.market-card,.proj,.sk,.cert-card,.award-card,.tech-chip,#page-home .ak-home-exp-card';
+    document.addEventListener('click',e=>{
+      const el=e.target.closest(clickable); if(!el) return;
+      el.classList.remove('ak-click-pop'); void el.offsetWidth; el.classList.add('ak-click-pop');
+      if(el.matches('.nav-tab,.mobile-nav-tab,.cqbtn,.btn-primary,.btn-secondary')){
+        qsa(el.classList.contains('cqbtn')?'.cqbtn':'.ak-selected').forEach(x=>{ if(x!==el && !x.classList.contains('active')) x.classList.remove('ak-selected'); });
+        el.classList.add('ak-selected');
+      }
+    },true);
+    document.addEventListener('click',e=>{
+      const p=e.target.closest('.profile-glass-card,.profile-img-wrap,.profile-photo,.profile-photo-v2,.pimg'); if(!p) return;
+      p.classList.remove('ak-profile-zoom'); void p.offsetWidth; p.classList.add('ak-profile-zoom');
+      setTimeout(()=>p.classList.remove('ak-profile-zoom'),750);
+    },true);
+  }
+  document.addEventListener('DOMContentLoaded',()=>{addMotionHandlers(); setTimeout(openChatWithGreeting,900);});
+  window.addEventListener('load',()=>setTimeout(openChatWithGreeting,1200));
+})();
+</script>
+
+
+
+<style id="ak-final-fix-motion-responsive">
+/* === FINAL FIX: stable circular profile zoom + complete interactive motion === */
+:root{--ak-fix-orange:#ff6a18;--ak-fix-pink:#ff4f9a;--ak-fix-purple:#7b4dff;--ak-fix-glow:0 18px 52px rgba(255,106,24,.24),0 0 32px rgba(123,77,255,.12);} 
+.hero-actions-v2{display:flex!important;align-items:center!important;gap:.75rem!important;flex-wrap:wrap!important}.btn-download-resume{border:1px solid rgba(255,255,255,.14);background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.035));color:#fff;border-radius:12px;padding:.72rem 1.15rem;font-family:inherit;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 10px 28px rgba(0,0,0,.25);position:relative;overflow:hidden;white-space:nowrap}.btn-download-resume:hover{background:linear-gradient(135deg,var(--ak-fix-orange),var(--ak-fix-pink),var(--ak-fix-purple));box-shadow:var(--ak-fix-glow)!important}
+.hero-title-v2,.hero-name{white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important;line-height:.98!important;font-size:clamp(2.45rem,4.25vw,4.55rem)!important;letter-spacing:-.055em!important}.hero-title-v2 .gradient-text-v2{white-space:nowrap!important;display:inline!important}.card-name{white-space:nowrap!important;font-size:clamp(1rem,1.7vw,1.25rem)!important}
+.profile-photo-wrap-v2,.profile-img-wrap{width:142px!important;height:142px!important;min-width:142px!important;min-height:142px!important;max-width:142px!important;max-height:142px!important;border-radius:50%!important;overflow:hidden!important;padding:0!important;display:block!important;position:relative!important;isolation:isolate!important;cursor:pointer!important;transform:none!important;animation:none!important;background:conic-gradient(from 0deg,var(--ak-fix-orange),var(--ak-fix-pink),var(--ak-fix-purple),var(--ak-fix-orange))!important;box-shadow:0 14px 38px rgba(255,106,24,.28)!important}.profile-photo-wrap-v2::after,.profile-img-wrap::after{content:"";position:absolute;inset:4px;border-radius:50%;border:5px solid rgba(8,12,22,.96);pointer-events:none;z-index:3}.profile-photo-v2,.profile-photo,.pimg{position:absolute!important;inset:4px!important;width:calc(100% - 8px)!important;height:calc(100% - 8px)!important;max-width:none!important;max-height:none!important;border:0!important;border-radius:50%!important;object-fit:cover!important;display:block!important;transform:scale(1)!important;transform-origin:center center!important;transition:transform .55s cubic-bezier(.22,1,.36,1),filter .35s ease!important;will-change:transform!important;z-index:2!important;animation:none!important;box-shadow:none!important}.profile-photo-wrap-v2:hover .profile-photo-v2,.profile-img-wrap:hover .profile-photo,.profile-img-wrap:hover .pimg{transform:scale(1.14)!important;filter:saturate(1.12) contrast(1.04)!important}.profile-photo-v2:hover,.profile-photo:hover,.pimg:hover{transform:scale(1.14)!important;box-shadow:none!important}.profile-card-v2,.profile-glass-card{transform-style:preserve-3d!important;perspective:1100px!important}.profile-card-v2.ak-profile-card-click,.profile-glass-card.ak-profile-card-click{animation:akCard3DClick .75s cubic-bezier(.2,1.35,.35,1)!important}@keyframes akCard3DClick{0%{transform:perspective(1100px) rotateX(0) rotateY(0) scale(1)}45%{transform:perspective(1100px) rotateX(7deg) rotateY(-8deg) translateZ(38px) scale(1.035)}100%{transform:perspective(1100px) rotateX(0) rotateY(0) scale(1)}}
+.glass-card,.profile-card-v2,.quick-contact-card,.tech-card-v2,.kpi-v2,.feature-card-v2,.home-skill-board,.home-project-card,.home-recognition-card,.home-thought-card,.market-card,.market-kpi-card,.gkpi,.growth-kpi-card,.growth-visual-card,.cert-card,.sk,.proj,.exp-card,.award-card,.info-panel,.thought-card,.scard,.tech-chip,.contact-form,#akHomeExperienceJourney,.ak-home-exp-card,section{transition:transform .32s cubic-bezier(.22,1,.36,1),box-shadow .32s ease,border-color .32s ease,background .32s ease,filter .32s ease!important;transform-style:preserve-3d!important}.glass-card:hover,.profile-card-v2:hover,.quick-contact-card:hover,.tech-card-v2:hover,.kpi-v2:hover,.feature-card-v2:hover,.home-skill-board:hover,.home-project-card:hover,.home-recognition-card:hover,.home-thought-card:hover,.market-card:hover,.market-kpi-card:hover,.gkpi:hover,.growth-kpi-card:hover,.growth-visual-card:hover,.cert-card:hover,.sk:hover,.proj:hover,.exp-card:hover,.award-card:hover,.info-panel:hover,.thought-card:hover,.scard:hover,.tech-chip:hover,.contact-form:hover,.ak-home-exp-card:hover{transform:translateY(-8px) rotateX(1.2deg) scale(1.012)!important;border-color:rgba(255,106,24,.42)!important;box-shadow:var(--ak-fix-glow)!important;filter:saturate(1.08)!important}
+button,a,.nav-tab,.mobile-nav-tab,.btn-work-v2,.btn-hire-v2,.btn-download-resume,.btn-resume,.cqbtn,.soc-n,.info-item,.ak-home-exp-btn,.ak-home-exp-dots button{position:relative;overflow:hidden;transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s ease,filter .2s ease,background .2s ease!important}button:hover,a:hover,.nav-tab:hover,.mobile-nav-tab:hover,.btn-work-v2:hover,.btn-hire-v2:hover,.btn-download-resume:hover,.btn-resume:hover,.cqbtn:hover,.soc-n:hover,.info-item:hover,.ak-home-exp-btn:hover,.ak-home-exp-dots button:hover{transform:translateY(-3px) scale(1.035)!important;box-shadow:0 14px 36px rgba(255,106,24,.26)!important;filter:saturate(1.15)!important}button:active,a:active,.nav-tab:active,.mobile-nav-tab:active,.btn-work-v2:active,.btn-hire-v2:active,.btn-download-resume:active,.btn-resume:active,.cqbtn:active,.soc-n:active,.info-item:active{transform:translateY(1px) scale(.965)!important}.ak-ripple{position:absolute;border-radius:50%;transform:scale(0);animation:akRipple .62s ease-out;background:rgba(255,255,255,.38);pointer-events:none}@keyframes akRipple{to{transform:scale(4);opacity:0}}.ak-reveal{opacity:0;transform:translateY(22px) scale(.985);filter:blur(3px)}.ak-reveal.ak-visible{opacity:1;transform:none;filter:none;transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1),filter .65s ease}.page{transition:opacity .28s ease,transform .28s ease}.page.active{animation:akTabSwitch .42s cubic-bezier(.22,1,.36,1)!important}@keyframes akTabSwitch{from{opacity:0;transform:translateY(14px) scale(.987)}to{opacity:1;transform:none}}body::after{content:"";position:fixed;inset:auto -8% -18% auto;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,24,.16),rgba(123,77,255,.08),transparent 68%);pointer-events:none;z-index:-1;animation:akFloatBg 10s ease-in-out infinite alternate}@keyframes akFloatBg{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-54px,-38px,0) scale(1.12)}}
+@media(max-width:1200px){.hero-title-v2,.hero-name{font-size:clamp(2.15rem,5.1vw,3.55rem)!important}.profile-photo-wrap-v2,.profile-img-wrap{width:124px!important;height:124px!important;min-width:124px!important;min-height:124px!important;max-width:124px!important;max-height:124px!important}}
+@media(max-width:700px){.hero-title-v2,.hero-name{font-size:clamp(1.75rem,10.2vw,2.35rem)!important;letter-spacing:-.045em!important}.hero-actions-v2{gap:.55rem!important}.btn-work-v2,.btn-hire-v2,.btn-download-resume{padding:.62rem .82rem!important;font-size:.72rem!important}.profile-photo-wrap-v2,.profile-img-wrap{width:112px!important;height:112px!important;min-width:112px!important;min-height:112px!important;max-width:112px!important;max-height:112px!important}.glass-card:hover,.profile-card-v2:hover,.quick-contact-card:hover,.tech-card-v2:hover,.kpi-v2:hover,.feature-card-v2:hover,.home-skill-board:hover,.home-project-card:hover,.home-recognition-card:hover,.home-thought-card:hover{transform:translateY(-4px) scale(1.006)!important}}
+@media(max-width:390px){.hero-title-v2,.hero-name{font-size:clamp(1.55rem,9.5vw,1.95rem)!important}.hero-actions-v2{flex-direction:column!important;align-items:stretch!important}.btn-work-v2,.btn-hire-v2,.btn-download-resume{width:100%!important;justify-content:center!important}}
+</style>
+<script id="ak-final-fix-js">
+(function(){
+  const qs=(s,r=document)=>r.querySelector(s), qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
+  window.downloadResumeFile=function(ev){
+    if(ev) ev.preventDefault();
+    let data={};
+    try{data=JSON.parse(localStorage.getItem('akash_portfolio_resume_v7')||localStorage.getItem('akash_portfolio_resume_v6')||'{}')}catch(e){}
+    const href=data.src || window.AKASH_RESUME_PATH || 'Akash_Kourav_Resume.pdf';
+    if(!data.src && !window.AKASH_RESUME_PATH){ if(typeof showToast==='function') showToast('📄 Resume file path not found. Upload resume from admin edit mode.'); return; }
+    const a=document.createElement('a'); a.href=href; a.download=data.name || 'Akash_Kourav_Resume.pdf'; document.body.appendChild(a); a.click(); a.remove();
+  };
+  function ripple(e){const el=e.target.closest('button,a,.nav-tab,.mobile-nav-tab,.btn-work-v2,.btn-hire-v2,.btn-download-resume,.btn-resume,.cqbtn,.soc-n,.info-item,.ak-home-exp-btn');if(!el)return;const r=el.getBoundingClientRect();const d=Math.max(r.width,r.height);const s=document.createElement('span');s.className='ak-ripple';s.style.width=s.style.height=d+'px';s.style.left=(e.clientX-r.left-d/2)+'px';s.style.top=(e.clientY-r.top-d/2)+'px';el.appendChild(s);setTimeout(()=>s.remove(),700)}
+  function profileClick(e){const hit=e.target.closest('.profile-photo-wrap-v2,.profile-img-wrap,.profile-card-v2,.profile-glass-card');if(!hit)return;const card=hit.closest('.profile-card-v2,.profile-glass-card')||hit;card.classList.remove('ak-profile-card-click');void card.offsetWidth;card.classList.add('ak-profile-card-click');setTimeout(()=>card.classList.remove('ak-profile-card-click'),800)}
+  function reveal(){const items=qsa('section,.glass-card,.profile-card-v2,.quick-contact-card,.tech-card-v2,.kpi-v2,.feature-card-v2,.home-skill-board,.market-card,.cert-card,.sk,.proj,.award-card,.exp-card,.contact-form');items.forEach(el=>{if(el.dataset.revealReady)return;el.dataset.revealReady='1';el.classList.add('ak-reveal')});const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('ak-visible');io.unobserve(en.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});items.forEach(el=>io.observe(el));}
+  function activeStates(){document.addEventListener('click',e=>{const el=e.target.closest('.nav-tab,.mobile-nav-tab,.btn-work-v2,.btn-hire-v2,.btn-download-resume,.btn-resume,.cqbtn');if(!el)return;el.classList.add('ak-click-pop');setTimeout(()=>el.classList.remove('ak-click-pop'),450)},true)}
+  document.addEventListener('click',ripple,true);document.addEventListener('click',profileClick,true);document.addEventListener('DOMContentLoaded',()=>{reveal();activeStates();setTimeout(reveal,900)});window.addEventListener('load',()=>setTimeout(reveal,400));
+})();
+</script>
+
+
+
+<!-- AKASH FINAL WORKING PATCH: single-line name, profile zoom fix, resume, animations -->
+<style id="akash-ultimate-working-fix">
+/* --- Hero name: always single line at 100% zoom --- */
+.hero-banner-v2{
+  grid-template-columns:minmax(520px,1.34fr) minmax(260px,.66fr)!important;
+  gap:1.2rem!important;
+  overflow:hidden!important;
+}
+.hero-copy-v2{min-width:0!important;max-width:100%!important;overflow:visible!important;}
+.hero-title-v2,
+.hero-name{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  white-space:nowrap!important;
+  word-break:normal!important;
+  overflow-wrap:normal!important;
+  hyphens:none!important;
+  line-height:.96!important;
+  letter-spacing:-.065em!important;
+  font-size:clamp(2.35rem,3.55vw,4.05rem)!important;
+}
+.hero-title-v2 .gradient-text-v2{display:inline!important;white-space:nowrap!important;}
+@media(max-width:1180px){
+  .hero-banner-v2{grid-template-columns:minmax(430px,1.22fr) minmax(220px,.78fr)!important;}
+  .hero-title-v2,.hero-name{font-size:clamp(2.15rem,3.9vw,3.35rem)!important;letter-spacing:-.058em!important;}
+}
+@media(max-width:900px){
+  .hero-banner-v2{grid-template-columns:1fr!important;}
+  .hero-title-v2,.hero-name{font-size:clamp(2.1rem,8.5vw,3.4rem)!important;}
+}
+@media(max-width:520px){
+  .hero-title-v2,.hero-name{font-size:clamp(1.75rem,10.4vw,2.45rem)!important;letter-spacing:-.055em!important;}
+}
+@media(max-width:370px){
+  .hero-title-v2,.hero-name{font-size:clamp(1.45rem,10.1vw,1.9rem)!important;}
+}
+
+/* --- Profile image: fixed circular frame, only inner image zooms --- */
+.profile-photo-wrap-v2,
+.profile-img-wrap{
+  box-sizing:border-box!important;
+  width:142px!important;height:142px!important;
+  min-width:142px!important;min-height:142px!important;
+  max-width:142px!important;max-height:142px!important;
+  margin-left:auto!important;margin-right:auto!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  padding:5px!important;
+  position:relative!important;
+  display:grid!important;
+  place-items:center!important;
+  isolation:isolate!important;
+  cursor:pointer!important;
+  background:conic-gradient(from 0deg,#ff6a18,#ff4f9a,#7b4dff,#ff6a18)!important;
+  box-shadow:0 10px 30px rgba(255,106,24,.28), inset 0 0 0 1px rgba(255,255,255,.16)!important;
+  animation:none!important;
+  transform:none!important;
+  transition:box-shadow .35s ease, filter .35s ease!important;
+}
+.profile-photo-wrap-v2:hover,
+.profile-img-wrap:hover{
+  box-shadow:0 16px 46px rgba(255,106,24,.36),0 0 0 7px rgba(255,106,24,.08)!important;
+}
+.profile-photo-wrap-v2::before,
+.profile-img-wrap::before{
+  content:""!important;
+  position:absolute!important;
+  inset:5px!important;
+  border-radius:50%!important;
+  background:#090d18!important;
+  z-index:1!important;
+}
+.profile-photo-wrap-v2::after,
+.profile-img-wrap::after{
+  content:""!important;
+  position:absolute!important;
+  inset:8px!important;
+  border-radius:50%!important;
+  border:4px solid rgba(9,13,24,.96)!important;
+  pointer-events:none!important;
+  z-index:4!important;
+}
+.profile-photo-v2,
+.profile-photo,
+.pimg{
+  position:relative!important;
+  inset:auto!important;
+  z-index:2!important;
+  width:calc(100% - 8px)!important;
+  height:calc(100% - 8px)!important;
+  min-width:0!important;min-height:0!important;
+  max-width:none!important;max-height:none!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  border:0!important;
+  box-shadow:none!important;
+  transform:scale(1)!important;
+  transform-origin:center center!important;
+  transition:transform .58s cubic-bezier(.22,1,.36,1), filter .35s ease!important;
+  will-change:transform!important;
+  animation:none!important;
+}
+.profile-photo-wrap-v2:hover .profile-photo-v2,
+.profile-img-wrap:hover .profile-photo,
+.profile-img-wrap:hover .pimg{
+  transform:scale(1.16)!important;
+  filter:saturate(1.14) contrast(1.05)!important;
+}
+.profile-photo-v2:hover,.profile-photo:hover,.pimg:hover{box-shadow:none!important;}
+.profile-card-v2,.profile-glass-card{transform-style:preserve-3d!important;perspective:1200px!important;will-change:transform!important;}
+.profile-card-v2.ak-profile-card-click,.profile-glass-card.ak-profile-card-click{animation:akashProfileCard3DClick .78s cubic-bezier(.18,1.35,.32,1)!important;}
+@keyframes akashProfileCard3DClick{
+  0%{transform:perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0) scale(1)}
+  45%{transform:perspective(1200px) rotateX(8deg) rotateY(-9deg) translateZ(42px) scale(1.04)}
+  100%{transform:perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0) scale(1)}
+}
+
+/* --- Resume button row --- */
+.hero-actions-v2{display:flex!important;align-items:center!important;gap:.75rem!important;flex-wrap:nowrap!important;}
+.btn-work-v2,.btn-hire-v2,.btn-download-resume{min-height:52px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap!important;}
+.btn-download-resume{
+  border:1px solid rgba(255,255,255,.14)!important;
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04))!important;
+  color:#fff!important;border-radius:14px!important;padding:.75rem 1.15rem!important;
+  font-family:inherit!important;font-weight:800!important;font-size:.82rem!important;cursor:pointer!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;position:relative!important;overflow:hidden!important;
+}
+.btn-download-resume:hover{background:linear-gradient(135deg,#ff6a18,#ff4f9a,#7b4dff)!important;box-shadow:0 18px 48px rgba(255,106,24,.34),0 0 34px rgba(123,77,255,.18)!important;}
+@media(max-width:700px){.hero-actions-v2{flex-wrap:wrap!important}.btn-work-v2,.btn-hire-v2,.btn-download-resume{min-height:44px!important;padding:.62rem .78rem!important;font-size:.72rem!important;}}
+@media(max-width:390px){.hero-actions-v2{flex-direction:column!important;align-items:stretch!important}.btn-work-v2,.btn-hire-v2,.btn-download-resume{width:100%!important;}}
+
+/* --- Universal hover/click animations for every clickable/visual item --- */
+.glass-card,.profile-card-v2,.contact-card-v2,.tech-strip-v2,.kpi-v2,.feature-card-v2,.home-skill-board,.home-project-card,.home-recognition-card,.home-thought-card,.market-card,.market-kpi-card,.gkpi,.growth-kpi-card,.growth-visual-card,.cert-card,.sk,.proj,.exp-card,.award-card,.info-panel,.thought-card,.scard,.tech-chip,.tech-pill-v2,.contact-item-v2,.mini-stat-v2,.what-card-v2,.project-mini,.contact-form,#akHomeExperienceJourney,.ak-home-exp-card{
+  transition:transform .32s cubic-bezier(.22,1,.36,1),box-shadow .32s ease,border-color .32s ease,background .32s ease,filter .32s ease!important;
+  transform-style:preserve-3d!important;
+}
+.glass-card:hover,.profile-card-v2:hover,.contact-card-v2:hover,.tech-strip-v2:hover,.kpi-v2:hover,.feature-card-v2:hover,.home-skill-board:hover,.home-project-card:hover,.home-recognition-card:hover,.home-thought-card:hover,.market-card:hover,.market-kpi-card:hover,.gkpi:hover,.growth-kpi-card:hover,.growth-visual-card:hover,.cert-card:hover,.sk:hover,.proj:hover,.exp-card:hover,.award-card:hover,.info-panel:hover,.thought-card:hover,.scard:hover,.tech-chip:hover,.tech-pill-v2:hover,.contact-item-v2:hover,.mini-stat-v2:hover,.what-card-v2:hover,.project-mini:hover,.contact-form:hover,.ak-home-exp-card:hover{
+  transform:translateY(-8px) rotateX(1.2deg) scale(1.012)!important;
+  border-color:rgba(255,106,24,.44)!important;
+  box-shadow:0 18px 52px rgba(255,106,24,.24),0 0 32px rgba(123,77,255,.12)!important;
+  filter:saturate(1.08)!important;
+}
+button,a,.nav-tab,.mobile-nav-tab,.btn-work-v2,.btn-hire-v2,.btn-download-resume,.btn-resume,.cqbtn,.soc-n,.info-item,.connect-btn-v2,.view-link-v2,.ak-home-exp-btn,.ak-home-exp-dots button,.social-row-v2 a{
+  transition:transform .2s cubic-bezier(.22,1,.36,1),box-shadow .2s ease,filter .2s ease,background .2s ease!important;
+  transform-origin:center!important;
+}
+button:hover,a:hover,.nav-tab:hover,.mobile-nav-tab:hover,.btn-work-v2:hover,.btn-hire-v2:hover,.btn-download-resume:hover,.btn-resume:hover,.cqbtn:hover,.soc-n:hover,.info-item:hover,.connect-btn-v2:hover,.view-link-v2:hover,.ak-home-exp-btn:hover,.ak-home-exp-dots button:hover,.social-row-v2 a:hover{
+  transform:translateY(-3px) scale(1.035)!important;
+  box-shadow:0 14px 36px rgba(255,106,24,.26)!important;
+  filter:saturate(1.15)!important;
+}
+button:active,a:active,.nav-tab:active,.mobile-nav-tab:active,.btn-work-v2:active,.btn-hire-v2:active,.btn-download-resume:active,.btn-resume:active,.cqbtn:active,.soc-n:active,.info-item:active,.connect-btn-v2:active,.view-link-v2:active{transform:translateY(1px) scale(.965)!important;}
+.nav-tab.active,.mobile-nav-tab.active,.ak-selected{box-shadow:0 0 0 1px rgba(255,255,255,.12),0 12px 30px rgba(255,106,24,.24)!important;}
+.ak-ripple{position:absolute!important;border-radius:50%!important;transform:scale(0)!important;animation:akashRipple .62s ease-out!important;background:rgba(255,255,255,.42)!important;pointer-events:none!important;z-index:8!important;}
+@keyframes akashRipple{to{transform:scale(4)!important;opacity:0!important}}
+.ak-reveal{opacity:0;transform:translateY(24px) scale(.985);filter:blur(3px)}
+.ak-reveal.ak-visible{opacity:1;transform:none;filter:none;transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1),filter .7s ease}
+.page.active{animation:akashTabSwitch .42s cubic-bezier(.22,1,.36,1)!important}
+@keyframes akashTabSwitch{from{opacity:0;transform:translateY(14px) scale(.987)}to{opacity:1;transform:none}}
+body::before{content:"";position:fixed;inset:-20%;z-index:-2;pointer-events:none;background:radial-gradient(circle at 12% 22%,rgba(255,106,24,.12),transparent 24%),radial-gradient(circle at 85% 20%,rgba(123,77,255,.12),transparent 30%),radial-gradient(circle at 78% 86%,rgba(255,79,154,.08),transparent 26%);animation:akashFloatBg2 12s ease-in-out infinite alternate;}
+@keyframes akashFloatBg2{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-34px,-22px,0) scale(1.06)}}
+@media(max-width:700px){.glass-card:hover,.profile-card-v2:hover,.contact-card-v2:hover,.tech-strip-v2:hover,.kpi-v2:hover,.feature-card-v2:hover,.home-skill-board:hover,.home-project-card:hover,.home-recognition-card:hover,.home-thought-card:hover{transform:translateY(-4px) scale(1.006)!important}.profile-photo-wrap-v2,.profile-img-wrap{width:112px!important;height:112px!important;min-width:112px!important;min-height:112px!important;max-width:112px!important;max-height:112px!important}}
+</style>
+<script id="akash-ultimate-working-js">
+(function(){
+  const qs=(s,r=document)=>r.querySelector(s), qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
+  window.AKASH_RESUME_PATH = window.AKASH_RESUME_PATH || './Akash_Kourav_Resume.pdf';
+  window.downloadResumeFile=function(ev){
+    if(ev) ev.preventDefault();
+    let data={};
+    try{data=JSON.parse(localStorage.getItem('akash_portfolio_resume_v7')||localStorage.getItem('akash_portfolio_resume_v6')||'{}')}catch(e){}
+    const href=data.src || window.AKASH_RESUME_PATH || './Akash_Kourav_Resume.pdf';
+    const a=document.createElement('a');
+    a.href=href; a.download=data.name || 'Akash_Kourav_Resume.pdf';
+    document.body.appendChild(a); a.click(); a.remove();
+    if(!data.src && typeof showToast==='function') showToast('Resume download started. Keep Akash_Kourav_Resume.pdf in the same GitHub folder as index.html.');
+  };
+  function ensureResumeButton(){
+    const row=qs('.hero-actions-v2'); if(!row) return;
+    if(!qs('.hero-actions-v2 .btn-download-resume')){
+      const b=document.createElement('button'); b.type='button'; b.className='btn-download-resume'; b.textContent='⬇ Download Resume'; b.onclick=window.downloadResumeFile; row.appendChild(b);
+    }
+  }
+  function ripple(e){
+    const el=e.target.closest('button,a,.nav-tab,.mobile-nav-tab,.btn-work-v2,.btn-hire-v2,.btn-download-resume,.btn-resume,.cqbtn,.soc-n,.info-item,.connect-btn-v2,.view-link-v2,.ak-home-exp-btn,.social-row-v2 a');
+    if(!el) return;
+    if(getComputedStyle(el).position==='static') el.style.position='relative';
+    el.style.overflow='hidden';
+    const r=el.getBoundingClientRect(); const d=Math.max(r.width,r.height);
+    const s=document.createElement('span'); s.className='ak-ripple'; s.style.width=s.style.height=d+'px'; s.style.left=(e.clientX-r.left-d/2)+'px'; s.style.top=(e.clientY-r.top-d/2)+'px';
+    el.appendChild(s); setTimeout(()=>s.remove(),700);
+  }
+  function profileClick(e){
+    const hit=e.target.closest('.profile-photo-wrap-v2,.profile-img-wrap,.profile-card-v2,.profile-glass-card'); if(!hit) return;
+    const card=hit.closest('.profile-card-v2,.profile-glass-card')||hit;
+    card.classList.remove('ak-profile-card-click'); void card.offsetWidth; card.classList.add('ak-profile-card-click');
+    setTimeout(()=>card.classList.remove('ak-profile-card-click'),820);
+  }
+  function reveal(){
+    const items=qsa('section,.glass-card,.profile-card-v2,.contact-card-v2,.tech-strip-v2,.kpi-v2,.feature-card-v2,.home-skill-board,.home-project-card,.home-recognition-card,.home-thought-card,.market-card,.cert-card,.sk,.proj,.award-card,.exp-card,.contact-form');
+    items.forEach(el=>{if(!el.dataset.revealReady){el.dataset.revealReady='1';el.classList.add('ak-reveal');}});
+    const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('ak-visible');io.unobserve(en.target)}}),{threshold:.10,rootMargin:'0px 0px -35px 0px'});
+    items.forEach(el=>io.observe(el));
+  }
+  function activeStates(e){const el=e.target.closest('.nav-tab,.mobile-nav-tab,.btn-work-v2,.btn-hire-v2,.btn-download-resume,.btn-resume,.cqbtn'); if(!el)return; el.classList.add('ak-selected'); setTimeout(()=>el.classList.remove('ak-selected'),650);}
+  document.addEventListener('click',ripple,true); document.addEventListener('click',profileClick,true); document.addEventListener('click',activeStates,true);
+  document.addEventListener('DOMContentLoaded',()=>{ensureResumeButton(); reveal(); setTimeout(reveal,700);});
+  window.addEventListener('load',()=>{ensureResumeButton(); setTimeout(reveal,400);});
 })();
 </script>
 
