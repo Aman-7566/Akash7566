@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- GitHub Pages ready: keep this file named index.html in repository root -->
+
 
 <html lang="en">
 <head>
